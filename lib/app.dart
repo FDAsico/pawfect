@@ -13,7 +13,7 @@ class App extends StatelessWidget {
       home: Login(),
       theme: ThemeData(
         colorScheme: ColorScheme.light(
-          primary: Color.fromARGB(255, 95, 79, 134),
+          primary: Color.fromARGB(255, 91, 72, 139),
           //onPrimary: onPrimary,
           //secondary: secondary,
           //onSecondary: onSecondary,
