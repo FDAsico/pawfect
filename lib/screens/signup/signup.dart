@@ -73,6 +73,9 @@ class SignUp extends StatelessWidget {
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
                       hintText: 'Enter your name',
+                      hintStyle: TextStyle(
+                        color: Color.fromARGB(255, 144, 160, 183),
+                      ),
                     ),
                   ),
                 ),
@@ -96,6 +99,35 @@ class SignUp extends StatelessWidget {
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
                       hintText: 'Enter your email',
+                      hintStyle: TextStyle(
+                        color: Color.fromARGB(255, 144, 160, 183),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              Container(
+                alignment: Alignment.topLeft,
+                margin: EdgeInsets.fromLTRB(20.0, 0.0, 20.0, 0.0),
+                child: Text(
+                  'Phone Number',
+                  style: TextStyle(
+                    fontWeight: FontWeight.normal,
+                    fontSize: 20,
+                  ),
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.fromLTRB(20.0, 8.0, 20.0, 8.0),
+                child: SizedBox(
+                  child: TextField(
+                    obscureText: false,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      hintText: 'Enter your Phone Number',
+                      hintStyle: TextStyle(
+                        color: Color.fromARGB(255, 144, 160, 183),
+                      ),
                     ),
                   ),
                 ),
@@ -119,6 +151,9 @@ class SignUp extends StatelessWidget {
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
                       hintText: 'Enter your password',
+                      hintStyle: TextStyle(
+                        color: Color.fromARGB(255, 144, 160, 183),
+                      ),
                     ),
                   ),
                 )
@@ -127,7 +162,7 @@ class SignUp extends StatelessWidget {
                 alignment: Alignment.topLeft,
                 margin: EdgeInsets.fromLTRB(20.0, 0.0, 20.0, 0.0),
                 child: Text(
-                  'Confirm Password',
+                  'Re-type Password',
                   style: TextStyle(
                     fontWeight: FontWeight.normal,
                     fontSize: 20,
@@ -141,7 +176,10 @@ class SignUp extends StatelessWidget {
                     obscureText: true,
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
-                      hintText: 'Confirm Password',
+                      hintText: '***************',
+                      hintStyle: TextStyle(
+                        color: Color.fromARGB(255, 144, 160, 183),
+                      ),
                     ),
                   ),
                 )

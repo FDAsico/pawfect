@@ -72,6 +72,9 @@ class Login extends StatelessWidget {
                         decoration: InputDecoration(
                           border: OutlineInputBorder(),
                           hintText: 'Enter your email',
+                          hintStyle: TextStyle(
+                            color: Color.fromARGB(255, 144, 160, 183),
+                          ),
                         ),
                       ),
                     ),
@@ -95,6 +98,9 @@ class Login extends StatelessWidget {
                         decoration: InputDecoration(
                           border: OutlineInputBorder(),
                           hintText: 'Enter your password',
+                          hintStyle: TextStyle(
+                            color: Color.fromARGB(255, 144, 160, 183),
+                          ),
                         ),
                       ),
                     )

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pawfect/screens/reset/reset.dart';
 
 /* 
 Authored by: Francis Dave A. Asico
@@ -65,6 +66,9 @@ class Forgot extends StatelessWidget {
                       decoration: InputDecoration(
                         border: OutlineInputBorder(),
                         hintText: 'Enter your Email',
+                        hintStyle: TextStyle(
+                          color: Color.fromARGB(255, 144, 160, 183),
+                        ),
                       ),
                     ),
                   )
@@ -75,7 +79,12 @@ class Forgot extends StatelessWidget {
                   height: 58.0,
                   child: SizedBox(
                     child: FilledButton(
-                      onPressed: () => debugPrint('Reset Button Pressed!'), 
+                      onPressed: () => Navigator.push(
+                        context, 
+                        MaterialPageRoute(
+                          builder: (context) => Reset(),
+                        )
+                      ),
                       style: ButtonStyle(
                         shape: WidgetStateProperty.all<RoundedRectangleBorder>(
                           RoundedRectangleBorder(
