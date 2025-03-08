@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:pawfect/screens/reset/forgot.dart';
 import 'package:pawfect/screens/signup/signup.dart';
-
+/* 
+Authored by: Francis Dave A. Asico
+Company: JaCode Facctory
+Project: Pawfect Naga
+Feature: [PAW-5] Login Screen
+Description: Login screen for users who have accounts
+ */
 class Login extends StatelessWidget {
   const Login({super.key});
 
@@ -191,3 +197,4 @@ class Login extends StatelessWidget {
     );
   }
 }
+
