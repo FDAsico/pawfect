@@ -7,47 +7,47 @@ class Login extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Container(
-        alignment: Alignment.center,
-        child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Container(
-            alignment: Alignment.topLeft,
-            margin: EdgeInsets.fromLTRB(15.0, 0.0, 15.0, 0.0),
-            child: Text(
-              'Email',
-              style: TextStyle(
-                fontWeight: FontWeight.normal,
-                fontSize: 35,
-              ),
-            ),
-          ),
-          Container(
-            margin: EdgeInsets.fromLTRB(15.0, 8.0, 15.0, 8.0),
-            child: SizedBox(
-              child: TextField(
-                obscureText: false,
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  hintText: 'Enter your email',
+          alignment: Alignment.center,
+          child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              alignment: Alignment.topLeft,
+              margin: EdgeInsets.fromLTRB(15.0, 0.0, 15.0, 0.0),
+              child: Text(
+                'Email',
+                style: TextStyle(
+                  fontWeight: FontWeight.normal,
+                  fontSize: 30,
                 ),
               ),
             ),
-          ),
-          Container(
-            margin: EdgeInsets.fromLTRB(15.0, 8.0, 15.0, 8.0),
-            child: SizedBox(
-              child: TextField(
-                obscureText: true,
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  hintText: 'Enter your password',
+            Container(
+              margin: EdgeInsets.fromLTRB(15.0, 8.0, 15.0, 8.0),
+              child: SizedBox(
+                child: TextField(
+                  obscureText: false,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    hintText: 'Enter your email',
+                  ),
                 ),
               ),
+            ),
+            Container(
+              margin: EdgeInsets.fromLTRB(15.0, 8.0, 15.0, 8.0),
+              child: SizedBox(
+                child: TextField(
+                  obscureText: true,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    hintText: 'Enter your password',
+                  ),
+                ),
+              )
             )
-          )
-        ],
-       ),
+          ],
+        ),
       )
     );
   }

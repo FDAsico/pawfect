@@ -1,0 +1,2 @@
+E:/dev/pawfect/android/app/.cxx/Debug/4p45uj2t/armeabi-v7a/CMakeFiles/edit_cache.dir
+E:/dev/pawfect/android/app/.cxx/Debug/4p45uj2t/armeabi-v7a/CMakeFiles/rebuild_cache.dir
