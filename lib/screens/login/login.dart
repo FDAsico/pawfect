@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pawfect/screens/home/home.dart';
 import 'package:pawfect/screens/reset/forgot.dart';
 import 'package:pawfect/screens/signup/signup.dart';
 /* 
@@ -13,8 +14,12 @@ class Login extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var brightness = MediaQuery.of(context).platformBrightness;
+    bool isDarkMode = (brightness == Brightness.dark);
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+      ),
       body: ListView(
         children: [
           Container(
@@ -26,11 +31,7 @@ class Login extends StatelessWidget {
                   margin: EdgeInsets.fromLTRB(20.0, 0.0, 20.0, 0.0),
                   child: Text(
                     'PAWFECT NAGA',
-                    style: TextStyle(
-                      fontWeight: FontWeight.w900,
-                      fontSize: 36,
-                      color: Color.fromARGB(255, 91, 72, 139),
-                    ),
+                    style: Theme.of(context).textTheme.titleLarge,
                   ),
                 ),
                 Container(
@@ -49,7 +50,7 @@ class Login extends StatelessWidget {
                     "Hi! Welcome back you've been missed",
                     style: TextStyle(
                       fontWeight: FontWeight.normal,
-                      fontSize: 13,
+                      fontSize: 15,
                     ),
                   ),
                 ),
@@ -70,10 +71,13 @@ class Login extends StatelessWidget {
                     child: TextField(
                       obscureText: false,
                       decoration: InputDecoration(
+                        filled: true,
+                        fillColor: Color(0xFFF1F1F1),
                         border: OutlineInputBorder(),
                         hintText: 'Enter your email',
                         hintStyle: TextStyle(
                           color: Color.fromARGB(255, 144, 160, 183),
+                          fontSize: 15,
                         ),
                       ),
                     ),
@@ -96,10 +100,13 @@ class Login extends StatelessWidget {
                     child: TextField(
                       obscureText: true,
                       decoration: InputDecoration(
+                        filled: true,
+                        fillColor: Color(0xFFF1F1F1),
                         border: OutlineInputBorder(),
                         hintText: 'Enter your password',
                         hintStyle: TextStyle(
                           color: Color.fromARGB(255, 144, 160, 183),
+                          fontSize: 15,
                         ),
                       ),
                     ),
@@ -118,7 +125,7 @@ class Login extends StatelessWidget {
                     child: Text(
                       'Forgot Password?',
                       style: TextStyle(
-                        color: Color.fromARGB(255, 21, 3, 57),
+                        color: isDarkMode ? Color(0xFFe6e0e9) : Color.fromARGB(255, 21, 3, 57),
                         fontWeight: FontWeight.w700,
                       ),
                     )
@@ -130,7 +137,12 @@ class Login extends StatelessWidget {
                   height: 58.0,
                   child: SizedBox(
                     child: FilledButton(
-                      onPressed: () => debugPrint('Log in Button Pressed!'), 
+                      onPressed: () => Navigator.pushReplacement(
+                          context, 
+                          MaterialPageRoute(
+                            builder: (context) => Home()
+                          )
+                        ), 
                       style: ButtonStyle(
                         shape: WidgetStateProperty.all<RoundedRectangleBorder>(
                           RoundedRectangleBorder(
@@ -193,7 +205,7 @@ class Login extends StatelessWidget {
                         child: Text(
                           'Sign Up',
                           style: TextStyle(
-                            color: Color.fromARGB(255, 21, 3, 57),
+                            color: isDarkMode ? Color(0xFFe6e0e9) : Color.fromARGB(255, 21, 3, 57),
                             decoration: TextDecoration.underline,
                             fontWeight: FontWeight.bold,
                           ),

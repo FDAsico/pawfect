@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pawfect/screens/login/login.dart';
 import 'package:pawfect/screens/signup/signup.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 /* 
 Authored by: Francis Dave A. Asico
@@ -19,7 +20,6 @@ class OnBoarding extends StatefulWidget {
 }
 
 class _OnBoardingState extends State<OnBoarding> {
-  
   // PageController
   final PageController _pageController = PageController();
     int _currentIndex = 0;
@@ -27,17 +27,17 @@ class _OnBoardingState extends State<OnBoarding> {
       OnBoardComponent(
         title: "Welcome to Pawfect Naga", 
         description: "We're here to help you find the perfect buddy friend that will fill your life with love and joy.", 
-        imagePath: "lib/assets/images/Adopt a pet-amico 1.png"
+        imagePath: "assets/images/Adopt a pet-amico 1.png"
       ),
       OnBoardComponent(
         title: "Community for pet lovers", 
         description: "Our platform makes it easy for you to search, connect, and adopt your buddy soulmate. ", 
-        imagePath: "lib/assets/images/Adopt a pet-pana 1.png"
+        imagePath: "assets/images/Adopt a pet-pana 1.png"
       ),
       OnBoardComponent(
         title: "Pet Care Made Easy ", 
         description: "We offer convenient services and a supportive community for your pet's happiness and well-being.", 
-        imagePath: "lib/assets/images/pet care-amico 1.png"
+        imagePath: "assets/images/pet care-amico 1.png"
       )
     ];
 
@@ -59,6 +59,7 @@ class _OnBoardingState extends State<OnBoarding> {
     }
 
   void _onLogin() {
+    setinitScreenVal();
     Navigator.pushReplacement(
       context, 
       MaterialPageRoute(
@@ -68,6 +69,7 @@ class _OnBoardingState extends State<OnBoarding> {
   }
 
   void _onGetStarted() {
+    setinitScreenVal();
     Navigator.pushReplacement(
       context, 
       MaterialPageRoute(
@@ -76,10 +78,19 @@ class _OnBoardingState extends State<OnBoarding> {
     );
   }
 
+  void setinitScreenVal() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    int? initScreen = prefs.getInt('initScreen');
+    await prefs.setInt("initScreen", 1);
+    debugPrint('initScreen $initScreen');
+  }
+
   @override
   Widget build(BuildContext context) {
+    var brightness = MediaQuery.of(context).platformBrightness;
+    bool isDarkMode = (brightness == Brightness.dark);
     return Scaffold(
-      backgroundColor: Colors.white,
+      //backgroundColor: Colors.white,
       body: Stack(
         children: [
           PageView.builder(
@@ -134,7 +145,7 @@ class _OnBoardingState extends State<OnBoarding> {
                       child: Text(
                         'Login',
                         style: TextStyle(
-                          color: Color.fromARGB(255, 21, 3, 57),
+                          color: isDarkMode ? Color(0xFFe6e0e9) : Color.fromARGB(255, 21, 3, 57),
                           decoration: TextDecoration.underline,
                           fontWeight: FontWeight.bold,
                         ),
@@ -187,8 +198,8 @@ class _OnBoardingState extends State<OnBoarding> {
                 effect: WormEffect(
                   dotHeight: 12,
                   dotWidth: 12,
-                  dotColor: Color.fromARGB(107, 249, 194, 186),
-                  activeDotColor: Color(0xFF5F4F86),
+                  dotColor: isDarkMode ? Color(0xFFe6e0e9) : Color.fromARGB(107, 249, 194, 186),
+                  activeDotColor: isDarkMode ? Color(0xFFD0BCFE) : Color(0xFF5B488B),
                 )
               ),
             )
@@ -213,6 +224,8 @@ class OnBoardComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var brightness = MediaQuery.of(context).platformBrightness;
+    bool isDarkMode = (brightness == Brightness.dark);
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -221,7 +234,7 @@ class OnBoardComponent extends StatelessWidget {
         Text(
           title,
           style: TextStyle(
-            color: Color(0xFF5B488B),
+            color: isDarkMode ? Color(0xFFD0BCFE) : Color(0xFF5B488B) ,
             fontSize: 24,
             fontWeight: FontWeight.bold,
           )
@@ -233,7 +246,7 @@ class OnBoardComponent extends StatelessWidget {
             description,
             textAlign: TextAlign.center,
             style: TextStyle(
-              color: Color(0xFF000000),
+              //color: Color(0xFF000000),
               fontSize: 16,
             ),
           ),

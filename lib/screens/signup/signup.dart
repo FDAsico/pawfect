@@ -16,6 +16,8 @@ class SignUp extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
+    var brightness = MediaQuery.of(context).platformBrightness;
+    bool isDarkMode = (brightness == Brightness.dark);
     return Scaffold(
         appBar: AppBar(
           actions: <Widget>[
@@ -33,7 +35,7 @@ class SignUp extends StatelessWidget {
                     'Already have an account?',
                     style: TextStyle(
                       fontSize: 15,
-                      color: Color.fromARGB(255, 21, 3, 57),
+                      color: isDarkMode ? Color(0xFFe6e0e9) : Color.fromARGB(255, 21, 3, 57),
                       //decoration: TextDecoration.underline,
                       fontWeight: FontWeight.bold,
                     ),
@@ -54,11 +56,7 @@ class SignUp extends StatelessWidget {
                 margin: EdgeInsets.fromLTRB(20.0, 0.0, 20.0, 0.0),
                 child: Text(
                   'PAWFECT NAGA',
-                  style: TextStyle(
-                    fontWeight: FontWeight.w900,
-                    fontSize: 36,
-                    color: Color.fromARGB(255, 91, 72, 139),
-                  ),
+                  style: Theme.of(context).textTheme.titleLarge,
                 ),
               ),
               Container(
@@ -78,7 +76,7 @@ class SignUp extends StatelessWidget {
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontWeight: FontWeight.normal,
-                    fontSize: 20,
+                    fontSize: 15,
                   ),
                 ),
               ),
@@ -99,6 +97,8 @@ class SignUp extends StatelessWidget {
                   child: TextField(
                     obscureText: false,
                     decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Color(0xFFF1F1F1),
                       border: OutlineInputBorder(),
                       hintText: 'Enter your name',
                       hintStyle: TextStyle(
@@ -125,6 +125,8 @@ class SignUp extends StatelessWidget {
                   child: TextField(
                     obscureText: false,
                     decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Color(0xFFF1F1F1),
                       border: OutlineInputBorder(),
                       hintText: 'Enter your email',
                       hintStyle: TextStyle(
@@ -151,6 +153,8 @@ class SignUp extends StatelessWidget {
                   child: TextField(
                     obscureText: false,
                     decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Color(0xFFF1F1F1),
                       border: OutlineInputBorder(),
                       hintText: 'Enter your Phone Number',
                       hintStyle: TextStyle(
@@ -177,6 +181,8 @@ class SignUp extends StatelessWidget {
                   child: TextField(
                     obscureText: true,
                     decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Color(0xFFF1F1F1),
                       border: OutlineInputBorder(),
                       hintText: 'Enter your password',
                       hintStyle: TextStyle(
@@ -203,6 +209,8 @@ class SignUp extends StatelessWidget {
                   child: TextField(
                     obscureText: true,
                     decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Color(0xFFF1F1F1),
                       border: OutlineInputBorder(),
                       hintText: '***************',
                       hintStyle: TextStyle(

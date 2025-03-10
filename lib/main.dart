@@ -9,7 +9,7 @@ Future<void> main() async {
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   SharedPreferences prefs = await SharedPreferences.getInstance();
   initScreen = prefs.getInt('initScreen');
-  await prefs.setInt("initScreen", 1);
+  //await prefs.setInt("initScreen", 1);
   debugPrint('initScreen $initScreen');
   runApp(App());
 }

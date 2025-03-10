@@ -34,8 +34,9 @@ class _AppState extends State<App> {
       theme: ThemeData(
         useMaterial3: true,
         colorScheme: ColorScheme.fromSeed(
-          seedColor: Color.fromARGB(255, 91, 72, 139),
-          primary: Color.fromARGB(255, 91, 72, 139),
+          seedColor: Color(0xFF5B488B),
+          primary: Color(0xFF5B488B),
+          // surface: Color(0xFFE4D7FD),
           //onPrimary: onPrimary,
           //secondary: secondary,
           //onSecondary: onSecondary,
@@ -46,14 +47,39 @@ class _AppState extends State<App> {
             fontWeight: FontWeight.bold,
           ),
           titleLarge: GoogleFonts.poppins(
-            fontSize: 30,
-            fontStyle: FontStyle.italic,
+            fontSize: 36,
+            fontWeight: FontWeight.w700,
+            color: Color.fromARGB(255, 91, 72, 139),
           ),
           bodyMedium: GoogleFonts.poppins(),
           displaySmall: GoogleFonts.poppins(),
         ),
       ),
-      darkTheme: ThemeData.dark(),
+      darkTheme: ThemeData(
+        useMaterial3: true,
+        colorScheme: ColorScheme.fromSeed(
+          brightness: Brightness.dark,
+          seedColor: Color(0xFF5B488B),
+          //primary: Color(0xFF5B488B),
+          //surface: Color(0xFFE4D7FD),
+          //onPrimary: onPrimary,
+          //secondary: secondary,
+          //onSecondary: onSecondary,
+        ),
+        textTheme: TextTheme(
+          displayLarge: const TextStyle(
+            fontSize: 72,
+            fontWeight: FontWeight.bold,
+          ),
+          titleLarge: GoogleFonts.poppins(
+            fontSize: 36,
+            fontWeight: FontWeight.w700,
+            color: Color(0xFFD0BCFE),
+          ),
+          bodyMedium: GoogleFonts.poppins(),
+          displaySmall: GoogleFonts.poppins(),
+        ),
+      ),
       themeMode: ThemeMode.system,
     );
   }
