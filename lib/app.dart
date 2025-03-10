@@ -14,6 +14,7 @@ class App extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.light(
           primary: Color.fromARGB(255, 91, 72, 139),
+          //onSurface: Color.fromARGB(255, 228, 215, 253),
           //onPrimary: onPrimary,
           //secondary: secondary,
           //onSecondary: onSecondary,
@@ -31,6 +32,8 @@ class App extends StatelessWidget {
           displaySmall: GoogleFonts.poppins(),
         ),
       ),
+      darkTheme: ThemeData.dark(),
+      themeMode: ThemeMode.system,
     );
   }
 }
