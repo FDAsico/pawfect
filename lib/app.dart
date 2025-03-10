@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:pawfect/main.dart';
 import 'package:pawfect/screens/login/login.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:pawfect/screens/onboarding/onbording.dart';
 // import 'screens/home/home.dart';
 
 class App extends StatelessWidget {
@@ -10,10 +12,10 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Pawfect Naga',
-      home: Login(),
+      home: initScreen == 0 ? OnBoarding() : Login(),
       theme: ThemeData(
-        colorScheme: ColorScheme.light(
-          primary: Color.fromARGB(255, 91, 72, 139),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Color.fromARGB(255, 91, 72, 139),
           //onPrimary: onPrimary,
           //secondary: secondary,
           //onSecondary: onSecondary,
