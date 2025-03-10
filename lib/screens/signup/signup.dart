@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pawfect/screens/login/login.dart';
 
 /* 
 Authored by: Francis Dave A. Asico
@@ -9,12 +10,39 @@ Description: Signup screen for users who do not have an account
 */
 
 class SignUp extends StatelessWidget {
-  const SignUp({super.key});
+  final dynamic initShow;
 
+  const SignUp( {super.key, @required this.initShow});
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(),
+        appBar: AppBar(
+          actions: <Widget>[
+            if (initShow == 0 || initShow == null) ...[
+              GestureDetector(
+                onTap:() => Navigator.pushReplacement(
+                  context, 
+                  MaterialPageRoute(
+                    builder: (context) => Login(),
+                  )
+                ),
+                child: SizedBox(
+                  width: 220,
+                  child: Text(
+                    'Already have an account?',
+                    style: TextStyle(
+                      fontSize: 15,
+                      color: Color.fromARGB(255, 21, 3, 57),
+                      //decoration: TextDecoration.underline,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                )
+              )
+            ]
+          ],
+        ),
         body: ListView(
           children: [
           Container(
