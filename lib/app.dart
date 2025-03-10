@@ -14,8 +14,8 @@ class App extends StatelessWidget {
       title: 'Pawfect Naga',
       home: initScreen == 0 ? OnBoarding() : Login(),
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: Color.fromARGB(255, 91, 72, 139),
+        colorScheme: ColorScheme.light(
+          primary: Color.fromARGB(255, 91, 72, 139),
           //onPrimary: onPrimary,
           //secondary: secondary,
           //onSecondary: onSecondary,
@@ -33,6 +33,8 @@ class App extends StatelessWidget {
           displaySmall: GoogleFonts.poppins(),
         ),
       ),
+      darkTheme: ThemeData.dark(),
+      themeMode: ThemeMode.system,
     );
   }
 }

@@ -1,3 +1,10 @@
+# Authored by: Francis Dave A. Asico
+# Company: JaCode Facctory
+# Project: Pawfect Naga
+# Feature: [PAW-4] Splash Screen
+# Description: Splash Screen when opening the app
+
+
 flutter_native_splash:
   android: true
   ios: true
@@ -5,11 +12,11 @@ flutter_native_splash:
 
   color: "#5f4f86"
   image: "assets/paw.png"
-  branding: "assets/pawfect-naga-invert.png"
+  branding: "assets/android-pawfect-naga-invert.png"
 
   color_dark: "#000000"
   image_dark: "assets/paw.png"
-  branding_dark: "assets/pawfect-naga-invert.png"
+  branding_dark: "assets/android-pawfect-naga-invert.png"
 
   android_12:
     color: "#5f4f86"

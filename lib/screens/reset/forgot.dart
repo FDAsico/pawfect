@@ -62,7 +62,7 @@ class Forgot extends StatelessWidget {
                   margin: EdgeInsets.fromLTRB(20.0, 8.0, 20.0, 8.0),
                   child: SizedBox(
                     child: TextField(
-                      obscureText: true,
+                      obscureText: false,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(),
                         hintText: 'Enter your Email',
