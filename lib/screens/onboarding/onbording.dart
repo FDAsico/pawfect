@@ -18,7 +18,7 @@ class OnBoarding extends StatefulWidget {
 }
 
 class _OnBoardingState extends State<OnBoarding> {
-
+  
   // PageController
   final PageController _pageController = PageController();
     int _currentIndex = 0;

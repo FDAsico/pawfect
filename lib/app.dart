@@ -12,10 +12,11 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Pawfect Naga',
-      home: initScreen == 0 ? OnBoarding() : Login(),
+      home: initScreen == 0 || initScreen == null ? OnBoarding() : Login(),
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
           seedColor: Color.fromARGB(255, 91, 72, 139),
+          primary: Color.fromARGB(255, 91, 72, 139),
           //onPrimary: onPrimary,
           //secondary: secondary,
           //onSecondary: onSecondary,
