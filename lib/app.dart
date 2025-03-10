@@ -14,6 +14,7 @@ class App extends StatelessWidget {
       title: 'Pawfect Naga',
       home: initScreen == 0 || initScreen == null ? OnBoarding() : Login(),
       theme: ThemeData(
+        useMaterial3: true,
         colorScheme: ColorScheme.fromSeed(
           seedColor: Color.fromARGB(255, 91, 72, 139),
           primary: Color.fromARGB(255, 91, 72, 139),
