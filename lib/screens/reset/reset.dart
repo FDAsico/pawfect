@@ -23,7 +23,7 @@ class Reset extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Image.asset(
-                  'lib/assets/images/Lilly 2.png'
+                  'assets/images/Lilly 2.png'
                 ),
                 Container(
                   margin: EdgeInsets.fromLTRB(20.0, 0.0, 20.0, 0.0),

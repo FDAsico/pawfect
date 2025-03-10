@@ -24,7 +24,7 @@ class Forgot extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Image.asset(
-                  'lib/assets/images/Lilly 2.png'
+                  'assets/images/Lilly 2.png'
                 ),
                 Container(
                   margin: EdgeInsets.fromLTRB(20.0, 0.0, 20.0, 0.0),
