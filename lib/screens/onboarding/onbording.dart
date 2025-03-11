@@ -107,7 +107,7 @@ class _OnBoardingState extends State<OnBoarding> {
             Positioned(
               left: 0,
               right: 0,
-              bottom: 100,
+              bottom: 90,
               child: Center(
                 child: FilledButton(
                   onPressed: _onGetStarted, 
@@ -131,7 +131,7 @@ class _OnBoardingState extends State<OnBoarding> {
             Positioned(
               left: 0,
               right: 0,
-              bottom: 65,
+              bottom: 55,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -164,7 +164,7 @@ class _OnBoardingState extends State<OnBoarding> {
                 child: Text(
                   "Skip",
                   style: TextStyle(
-                    color: Colors.red,
+                    //color: Colors.red,
                     fontSize: 18,
                     fontWeight: FontWeight.w600,
                   ),
@@ -179,7 +179,7 @@ class _OnBoardingState extends State<OnBoarding> {
                 child: Text(
                   "Next",
                   style: TextStyle(
-                    color: Colors.blue,
+                    //color: Colors.blue,
                     fontSize: 18,
                     fontWeight: FontWeight.w600,
                   ),
@@ -190,7 +190,7 @@ class _OnBoardingState extends State<OnBoarding> {
           Positioned(
             left: 0, 
             right: 0,
-            bottom: 170,
+            bottom: 150,
             child: Center(
               child: SmoothPageIndicator(
                 controller: _pageController, 
