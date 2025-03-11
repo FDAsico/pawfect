@@ -21,6 +21,7 @@ class Login extends StatelessWidget {
         automaticallyImplyLeading: false,
       ),
       body: ListView(
+        primary: false,
         children: [
           Container(
             alignment: Alignment.center,
