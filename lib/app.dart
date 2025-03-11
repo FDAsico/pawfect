@@ -29,6 +29,7 @@ class _AppState extends State<App> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false, 
       title: 'Pawfect Naga',
       home: initScreen == 0 || initScreen == null ? OnBoarding() : Login(),
       theme: ThemeData(
