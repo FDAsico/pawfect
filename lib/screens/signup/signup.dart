@@ -30,7 +30,7 @@ class SignUp extends StatelessWidget {
                   )
                 ),
                 child: SizedBox(
-                  width: 220,
+                  width: 195,
                   child: Text(
                     'Already have an account?',
                     style: TextStyle(
