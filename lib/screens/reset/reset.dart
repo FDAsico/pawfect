@@ -64,6 +64,8 @@ class Reset extends StatelessWidget {
                     child: TextField(
                       obscureText: true,
                       decoration: InputDecoration(
+                        filled: true,
+                        fillColor: Color(0xFFF1F1F1),
                         border: OutlineInputBorder(),
                         hintText: 'Enter your new password',
                         hintStyle: TextStyle(
@@ -90,6 +92,8 @@ class Reset extends StatelessWidget {
                     child: TextField(
                       obscureText: true,
                       decoration: InputDecoration(
+                        filled: true,
+                        fillColor: Color(0xFFF1F1F1),
                         border: OutlineInputBorder(),
                         hintText: '***********',
                         hintStyle: TextStyle(
