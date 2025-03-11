@@ -17,9 +17,10 @@ class Login extends StatelessWidget {
     var brightness = MediaQuery.of(context).platformBrightness;
     bool isDarkMode = (brightness == Brightness.dark);
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-      ),
+      // appBar: AppBar(
+      //   automaticallyImplyLeading: false,
+
+      // ),
       body: ListView(
         primary: false,
         children: [
@@ -28,6 +29,14 @@ class Login extends StatelessWidget {
             margin: EdgeInsetsDirectional.only(top: 35.0),
             child: Column(
               children: [
+                Container(
+                  padding: EdgeInsets.only(bottom: 20.0),
+                  child: Image.asset(
+                    isDarkMode ? 'assets/images/paw-dark.png' : 'assets/images/paw.png',
+                    height: 134,
+                  ),
+                ),
+                
                 Container(
                   margin: EdgeInsets.fromLTRB(20.0, 0.0, 20.0, 0.0),
                   child: Text(
