@@ -17,6 +17,7 @@ class Forgot extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(),
         body: ListView(
+          primary: false,
           children: [
             Container(
               alignment: Alignment.center,
