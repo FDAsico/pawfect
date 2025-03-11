@@ -10,18 +10,18 @@ flutter_native_splash:
   ios: true
   web: false
 
-  color: "#5f4f86"
+  color: "#FEF7FF"
   image: "assets/splash/paw.png"
-  branding: "assets/splash/android-pawfect-naga-invert.png"
+  branding: "assets/splash/android-pawfect-naga.png"
 
-  color_dark: "#000000"
+  color_dark: "#141414"
   image_dark: "assets/splash/paw.png"
   branding_dark: "assets/splash/android-pawfect-naga-invert.png"
 
   android_12:
-    color: "#5f4f86"
+    color: "#FEF7FF"
     image: "assets/splash/android-paw-no-bg.png"
-    branding: "assets/splash/android-pawfect-naga-invert.png"
-    color_dark: "#000000"
+    branding: "assets/splash/android-pawfect-naga.png"
+    color_dark: "#141414"
     image_dark: "assets/splash/android-paw-no-bg-invert.png"
     branding_dark: "assets/splash/android-pawfect-naga-invert.png"
