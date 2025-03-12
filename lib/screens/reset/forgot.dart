@@ -64,6 +64,9 @@ class Forgot extends StatelessWidget {
                   child: SizedBox(
                     child: TextField(
                       obscureText: false,
+                      style: TextStyle(
+                        color: Color(0xFF000000)
+                      ),
                       decoration: InputDecoration(
                         filled: true,
                         fillColor: Color(0xFFF1F1F1),
