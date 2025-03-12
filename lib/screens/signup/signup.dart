@@ -46,6 +46,7 @@ class SignUp extends StatelessWidget {
           ],
         ),
         body: ListView(
+          primary: false,
           children: [
             if( initShow == 0 || initShow == null) ...{
               Container(
@@ -108,6 +109,9 @@ class SignUp extends StatelessWidget {
                   child: SizedBox(
                     child: TextField(
                       obscureText: false,
+                      style: TextStyle(
+                        color: Color(0xFF000000)
+                      ),
                       decoration: InputDecoration(
                         filled: true,
                         fillColor: Color(0xFFF1F1F1),
@@ -136,6 +140,9 @@ class SignUp extends StatelessWidget {
                   child: SizedBox(
                     child: TextField(
                       obscureText: false,
+                      style: TextStyle(
+                        color: Color(0xFF000000)
+                      ),
                       decoration: InputDecoration(
                         filled: true,
                         fillColor: Color(0xFFF1F1F1),
@@ -164,6 +171,9 @@ class SignUp extends StatelessWidget {
                   child: SizedBox(
                     child: TextField(
                       obscureText: false,
+                      style: TextStyle(
+                        color: Color(0xFF000000)
+                      ),
                       decoration: InputDecoration(
                         filled: true,
                         fillColor: Color(0xFFF1F1F1),
@@ -192,6 +202,9 @@ class SignUp extends StatelessWidget {
                   child: SizedBox(
                     child: TextField(
                       obscureText: true,
+                      style: TextStyle(
+                        color: Color(0xFF000000)
+                      ),
                       decoration: InputDecoration(
                         filled: true,
                         fillColor: Color(0xFFF1F1F1),
@@ -220,6 +233,9 @@ class SignUp extends StatelessWidget {
                   child: SizedBox(
                     child: TextField(
                       obscureText: true,
+                      style: TextStyle(
+                        color: Color(0xFF000000)
+                      ),
                       decoration: InputDecoration(
                         filled: true,
                         fillColor: Color(0xFFF1F1F1),
