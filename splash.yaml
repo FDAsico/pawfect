@@ -10,7 +10,7 @@ flutter_native_splash:
   ios: true
   web: false
 
-  color: "#FEF7FF"
+  color: "#5F4F86"
   image: "assets/splash/paw-name-copy.png"
   #branding: "assets/android-pawfect-naga.png"
 
@@ -19,7 +19,7 @@ flutter_native_splash:
   #branding_dark: "assets/android-pawfect-naga-invert.png"
 
   android_12:
-    color: "#FEF7FF"
+    color: "#5F4F86"
     image: "assets/splash/android-paw-no-bg.png"
     #branding: "assets/android-pawfect-naga.png"
     color_dark: "#141414"
