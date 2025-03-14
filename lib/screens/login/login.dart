@@ -204,6 +204,47 @@ class Login extends StatelessWidget {
                   ],
                 ),
                 Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Container(
+                      alignment: Alignment.center,
+                      padding: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 25.0),
+                      //width: 110,
+                      child: GestureDetector(
+                        onTap:() => debugPrint('Facebook login Tapped!'),
+                        child: Image.asset(
+                          'assets/images/facebook-circle-fill.png',
+                          height: 40,
+                        ),
+                      ),
+                    ),
+                    Container(
+                      alignment: Alignment.center,
+                      padding: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 25.0),
+                      width: 130,
+                      child: GestureDetector(
+                        onTap: () => debugPrint('Google login Tapped!'),
+                        child: Image.asset(
+                          'assets/images/google 3.png',
+                          height: 35,
+                        ),
+                      ),
+                    ),
+                    Container(
+                      alignment: Alignment.center,
+                      padding: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 25.0),
+                      //width: 110,
+                      child: GestureDetector(
+                        onTap: () => debugPrint('Apple login Tapped!'),
+                        child: Image.asset(
+                          'assets/images/apple-fill.png',
+                          height: 35,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Container(
