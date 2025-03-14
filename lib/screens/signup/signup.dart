@@ -34,7 +34,7 @@ class SignUp extends StatelessWidget {
                   child: Text(
                     'Already have an account?',
                     style: TextStyle(
-                      fontSize: 15,
+                      fontSize: 13,
                       color: isDarkMode ? Color(0xFFe6e0e9) : Color.fromARGB(255, 21, 3, 57),
                       //decoration: TextDecoration.underline,
                       fontWeight: FontWeight.bold,
@@ -248,8 +248,72 @@ class SignUp extends StatelessWidget {
                     ),
                   )
                 ),
+                Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Container(
+                      padding: EdgeInsets.fromLTRB(0.0, 25.0, 0.0, 25.0),
+                      alignment: Alignment.center,
+                      width: 110,
+                      child: Divider(),
+                    ),
+                    Container(
+                      padding: EdgeInsets.fromLTRB(0.0, 25.0, 0.0, 25.0),
+                      alignment: Alignment.center,
+                      width: 130,
+                      child: Text('or sign up with'),
+                    ),
+                    Container(
+                      padding: EdgeInsets.fromLTRB(0.0, 25.0, 0.0, 25.0),
+                      alignment: Alignment.center,
+                      width: 110,
+                      child: Divider(),
+                    ),
+                  ],
+                ),
+                Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Container(
+                      alignment: Alignment.center,
+                      padding: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 25.0),
+                      //width: 110,
+                      child: GestureDetector(
+                        onTap:() => debugPrint('Facebook login Tapped!'),
+                        child: Image.asset(
+                          'assets/images/facebook-circle-fill.png',
+                          height: 40,
+                        ),
+                      ),
+                    ),
+                    Container(
+                      alignment: Alignment.center,
+                      padding: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 25.0),
+                      width: 130,
+                      child: GestureDetector(
+                        onTap: () => debugPrint('Google login Tapped!'),
+                        child: Image.asset(
+                          'assets/images/google 3.png',
+                          height: 35,
+                        ),
+                      ),
+                    ),
+                    Container(
+                      alignment: Alignment.center,
+                      padding: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 25.0),
+                      //width: 110,
+                      child: GestureDetector(
+                        onTap: () => debugPrint('Apple login Tapped!'),
+                        child: Image.asset(
+                          'assets/images/apple-fill.png',
+                          height: 35,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
                 Container(
-                  margin: EdgeInsets.fromLTRB(20.0, 25.0, 20.0, 25.0),
+                  margin: EdgeInsets.fromLTRB(20.0, 0.0, 20.0, 25.0),
                   width: 351.0,
                   height: 58.0,
                   child: SizedBox(
@@ -267,26 +331,6 @@ class SignUp extends StatelessWidget {
                       ),
                     ),
                   )
-                ),
-                Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Container(
-                      alignment: Alignment.center,
-                      width: 110,
-                      child: Divider(),
-                    ),
-                    Container(
-                      alignment: Alignment.center,
-                      width: 130,
-                      child: Text('or sign up with'),
-                    ),
-                    Container(
-                      alignment: Alignment.center,
-                      width: 110,
-                      child: Divider(),
-                    ),
-                  ],
                 ),
               ],
             ),
