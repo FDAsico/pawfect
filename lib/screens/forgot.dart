@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pawfect/screens/reset/reset.dart';
+import 'package:pawfect/screens/reset.dart';
 
 /* 
 Authored by: Francis Dave A. Asico

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pawfect/screens/login/login.dart';
+import 'package:pawfect/screens/login.dart';
 
 /* 
 Authored by: Francis Dave A. Asico

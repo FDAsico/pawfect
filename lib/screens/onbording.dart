@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:pawfect/screens/login/login.dart';
-import 'package:pawfect/screens/signup/signup.dart';
+import 'package:pawfect/screens/login.dart';
+import 'package:pawfect/screens/signup.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 

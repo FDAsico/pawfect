@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:pawfect/main.dart';
-import 'package:pawfect/screens/login/login.dart';
+import 'package:pawfect/screens/login.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:pawfect/screens/onboarding/onbording.dart';
+import 'package:pawfect/screens/onbording.dart';
 // import 'screens/home/home.dart';
 
 class App extends StatefulWidget {

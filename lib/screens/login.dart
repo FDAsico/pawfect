@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:pawfect/screens/home/home.dart';
-import 'package:pawfect/screens/reset/forgot.dart';
-import 'package:pawfect/screens/signup/signup.dart';
+import 'package:pawfect/screens/home.dart';
+import 'package:pawfect/screens/forgot.dart';
+import 'package:pawfect/screens/signup.dart';
 /* 
 Authored by: Francis Dave A. Asico
 Company: JaCode Facctory

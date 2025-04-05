@@ -35,7 +35,7 @@ class _HomeState extends State<Home> {
           }
         ),
         title: currentPageIndex == 0 ? Text(
-          'Hi Francis, How are you doing today?',
+          'How are you doing today?',
             style: TextStyle(
               fontSize: 13,
               fontWeight: FontWeight.normal,
