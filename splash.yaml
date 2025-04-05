@@ -11,7 +11,7 @@ flutter_native_splash:
   web: false
 
   color: "#5F4F86"
-  image: "assets/splash/paw-name-copy.png"
+  image: "assets/splash/paw-name-dark-copy.png"
   #branding: "assets/android-pawfect-naga.png"
 
   color_dark: "#141414"
