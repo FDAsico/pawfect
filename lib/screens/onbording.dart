@@ -241,7 +241,7 @@ class OnBoardComponent extends StatelessWidget {
         ),
         SizedBox(height: 20,),
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20),
+          padding: EdgeInsets.symmetric(horizontal: 15),
           child: Text(
             description,
             textAlign: TextAlign.center,
