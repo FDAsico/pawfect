@@ -8,323 +8,237 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int indexNavBar = 0;
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          "How are you today?",
-          style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-        ),
-        actions: [
-          IconButton(
-            onPressed: () {}, 
-            icon: Icon(Icons.notifications_outlined)
-          ),
-          IconButton(
-            onPressed: () {}, 
-            icon: Icon(Icons.shopping_cart_outlined)
-          )
-        ]
-      ),
-
-      body: Column(
-
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.center,
-
-          children: [
-
-            Container( //-------------------------------------------animal lovers community header
+    return ListView(children: [
+      Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Container(
+              //-------------------------------------------animal lovers community header
               margin: EdgeInsets.all(20),
               padding: EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: Theme.of(context).colorScheme.primary,
-                borderRadius: BorderRadius.circular(10)
-              ),
+                  color: Theme.of(context).colorScheme.primary,
+                  borderRadius: BorderRadius.circular(10)),
               width: 455,
-            
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
-
                 children: [
                   ConstrainedBox(
                     constraints: BoxConstraints(maxWidth: 200),
                     child: Text(
                       "Join our animal lovers community",
                       style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 20,
-                        color: Colors.white
-                      ),
+                          fontWeight: FontWeight.w600,
+                          fontSize: 16,
+                          color: Colors.white),
                     ),
                   ),
-
                   SizedBox(height: 12),
                   ElevatedButton(
                     onPressed: () {},
                     style: ElevatedButton.styleFrom(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8)
-                      )
-                    ),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8))),
                     child: Text("Join"),
                   )
                 ],
-              )
-
-            ),
-
-            Align(
-              alignment: Alignment.centerLeft,
-              child: Padding(
-                padding: const EdgeInsets.only(left: 20.0),
-                child: Text(
-                  "What are you looking for?",
-                  style: TextStyle(
+              )),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Padding(
+              padding: const EdgeInsets.only(left: 12.0),
+              child: Text(
+                "What are you looking for?",
+                style: TextStyle(
                     fontWeight: FontWeight.w600,
-                    fontSize: 20,
-                    color: Theme.of(context).colorScheme.primary
-                  ),
-                ),
+                    fontSize: 15,
+                    color: Theme.of(context).colorScheme.primary),
               ),
             ),
-            
-            SizedBox(height: 15),
-            Row(
+          ),
+          SizedBox(
+            height: 170,
+            child: ListView(
+              primary: false,
+              padding: EdgeInsets.only(top: 15.0),
+              scrollDirection: Axis.horizontal,
               children: [
                 Column(
                   children: [
                     Container(
-                      margin: EdgeInsets.only(left: 10),
-                      padding: EdgeInsets.all(16),
+                      margin: EdgeInsets.symmetric(horizontal: 10.0),
+                      padding: EdgeInsets.all(10),
                       decoration: BoxDecoration(
-                        color: const Color.fromARGB(255, 163, 125, 227),
-                        borderRadius: BorderRadius.circular(40),
-                        border: Border.all(width: 3)
-                      ),
-                      width: 120,
-                      height: 120,
+                          color: const Color(0xFFA0A2DA),
+                          borderRadius: BorderRadius.circular(40),
+                          border: Border.all(width: 1)),
+                      width: 110,
+                      height: 107,
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(25),
                         child: Image(
-                          image: AssetImage('assets/images/dog-picture.jpg')
-                        ),
+                            fit: BoxFit.cover,
+                            image: AssetImage('assets/images/store.png')),
                       ),
                     ),
-
-                    Text(
-                      "Pet Store",
+                    Container(
+                      alignment: Alignment.center,
+                      padding: EdgeInsets.only(top: 5),
+                      child: Text(
+                        "Pet Store",
                         style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 20,
+                          fontSize: 15,
+                        ),
                       ),
                     ),
                   ],
                 ),
-
                 Column(
                   children: [
                     Container(
-                      margin: EdgeInsets.only(left: 10),
-                      padding: EdgeInsets.all(16),
+                      margin: EdgeInsets.symmetric(horizontal: 10.0),
+                      padding: EdgeInsets.all(10),
                       decoration: BoxDecoration(
-                        color: const Color.fromARGB(255, 242, 124, 163),
+                        color: const Color(0xFFF18487),
                         borderRadius: BorderRadius.circular(40),
-                        border: Border.all(width: 3),
+                        border: Border.all(width: 1),
                       ),
-                      width: 120,
-                      height: 120,
+                      width: 110,
+                      height: 107,
                       child: ClipRRect(
-                        borderRadius: BorderRadius.circular(25),
+                        borderRadius: BorderRadius.circular(40),
                         child: Image(
-                          image: AssetImage('assets/images/cat-picture.jpg')
-                        ),
+                            fit: BoxFit.cover,
+                            image: AssetImage('assets/images/grooming.png')),
                       ),
                     ),
-
-                    Text(
-                      "Pet Grooming",
+                    Container(
+                      alignment: Alignment.center,
+                      padding: EdgeInsets.only(top: 5),
+                      child: Text(
+                        "Pet Grooming",
                         style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 20,
+                          fontSize: 15,
+                        ),
                       ),
                     ),
                   ],
                 ),
-
                 Column(
                   children: [
                     Container(
-                      margin: EdgeInsets.only(left: 10),
-                      padding: EdgeInsets.all(16),
+                      margin: EdgeInsets.symmetric(horizontal: 10.0),
+                      padding: EdgeInsets.all(10),
                       decoration: BoxDecoration(
-                        color: Colors.amber,
-                        borderRadius: BorderRadius.circular(40),
-                        border: Border.all(width: 3)
-                      ),
-                      width: 120,
-                      height: 120,
+                          color: Color(0xFFEF9E1B),
+                          borderRadius: BorderRadius.circular(40),
+                          border: Border.all(width: 1)),
+                      width: 110,
+                      height: 107,
                       child: ClipRRect(
-                        borderRadius: BorderRadius.circular(25),
+                        borderRadius: BorderRadius.circular(40),
                         child: Image(
-                          image: AssetImage('assets/images/rabbit-picture.jpg')
-                        ),
+                            fit: BoxFit.cover,
+                            image: AssetImage('assets/images/boarding.png')),
                       ),
                     ),
-
-                    Text(
-                      "Pet Boarding",
+                    Container(
+                      alignment: Alignment.center,
+                      padding: EdgeInsets.only(top: 5),
+                      child: Text(
+                        "Pet Boarding",
                         style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 20,
+                          fontSize: 15,
+                        ),
                       ),
                     ),
                   ],
                 ),
               ],
             ),
-
-            SizedBox(height: 20),
-            Row(
+          ),
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: 15),
+            child: Row(
               children: [
-                Container(
-                  margin: EdgeInsets.only(left: 10),
-                  child: InkWell(
+               InkWell(
                     onTap: () {},
                     child: Text(
                       "Best Seller",
                       style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 20,
-                        color: Theme.of(context).colorScheme.primary
-                      ),
+                          fontWeight: FontWeight.w600,
+                          fontSize: 15,
+                          color: Theme.of(context).colorScheme.primary),
                     ),
+                  ),
+                Spacer(),
+                //SizedBox(width: 200),
+                InkWell(
+                  onTap: () {},
+                  child: Text(
+                    "See more",
+                    style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 15,
+                        color: Theme.of(context).colorScheme.primary),
                   ),
                 ),
-
-                SizedBox(width: 200),
-                  InkWell(
-                    onTap: () {},
-                    child: Text(
-                      "See more",
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 20,
-                        color: Theme.of(context).colorScheme.primary
-                      ),
-                    ),
-                  ),
               ],
             ),
-
-            SizedBox(height: 20),
-            Row(
+          ),
+          Container(
+            padding: EdgeInsets.only(top: 10),
+            margin: EdgeInsets.symmetric(horizontal: 20),
+            child: Row(
               children: [
                 Container(
-                  margin: EdgeInsets.only(left: 20),
+                  // margin: EdgeInsets.only(left: 20),
                   padding: EdgeInsets.all(16),
                   decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(5),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withValues(alpha: 0.5),
-                        offset: Offset(0, 5),
-                        blurRadius: 3,
-                        spreadRadius: 0,
-                      )
-                    ]
-                  ),
-                  width: 164,
-                  height: 220,
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(5),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withValues(alpha: 0.5),
+                          offset: Offset(0, 5),
+                          blurRadius: 3,
+                          spreadRadius: 0,
+                        )
+                      ]),
+                  width: 146,
+                  height: 196,
                   child: Image(
-                    image: AssetImage('assets/images/pedigree-dog-food.jpg')
-                  ),
+                      image: AssetImage('assets/images/pedigree-dog-food.png')),
                 ),
-
-                SizedBox(width: 20),
-
+                Spacer(),
                 Container(
-                  margin: EdgeInsets.only(left: 20),
+                  // margin: EdgeInsets.only(left: 20),
                   padding: EdgeInsets.all(16),
                   decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(5 ),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withValues(alpha: 0.5),
-                        offset: Offset(0, 5),
-                        blurRadius: 3,
-                        spreadRadius: 0,
-                      )
-                    ]
-                  ),
-                  width: 164,
-                  height: 220,
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(5),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withValues(alpha: 0.5),
+                          offset: Offset(0, 5),
+                          blurRadius: 3,
+                          spreadRadius: 0,
+                        )
+                      ]),
+                  width: 146,
+                  height: 196,
                   child: Image(
-                    image: AssetImage('assets/images/canin-cat-food.jpg')
-                  ),
+                      image: AssetImage('assets/images/canine-urinary.png')),
                 ),
               ],
             ),
-
-          ],
-
-        ),
-
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        backgroundColor: Colors.white,
-        selectedItemColor: Theme.of(context).colorScheme.primary,
-        unselectedItemColor: Colors.grey,
-
-        onTap: (index) {
-          setState(() => indexNavBar = index);
-        },
-        
-        currentIndex: indexNavBar,
-
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home'
           ),
-
-          BottomNavigationBarItem(
-            icon: Icon(Icons.explore),
-            label: 'Discover'
-          ),
-
-          BottomNavigationBarItem(
-            icon: Icon(Icons.pets),
-            label: 'Adopt,'
-          ),
-
-          BottomNavigationBarItem(
-            icon: Icon(Icons.storefront),
-            label: 'Shop'
-          ),
-
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person_outline),
-            label: 'Profile'
-          )
-        ]
+        ],
       ),
-
-      drawer: NavigationDrawer(),
-
-    );
+    ]);
   }
-}
-
-class NavigationDrawer extends StatelessWidget {
-  const NavigationDrawer({super.key});
-
-  @override
-  Widget build(BuildContext context) => Drawer();
 }

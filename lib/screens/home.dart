@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:pawfect/screens/adoptpage.dart';
+import 'package:pawfect/screens/discoverpage.dart';
+import 'package:pawfect/screens/homepage.dart';
+import 'package:pawfect/screens/profilepage.dart';
+import 'package:pawfect/screens/shoppage.dart';
 
 /* 
 Authored by: Francis Dave A. Asico
@@ -18,6 +23,14 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
 
   int currentPageIndex = 0;
+
+  final List<Widget> _pages = [
+    const HomePage(),
+    const DiscoverPage(),
+    const AdoptPage(),
+    const ShopPage(),
+    const ProfilePage()
+  ];
   
   @override
   Widget build(BuildContext context) {
@@ -70,9 +83,7 @@ class _HomeState extends State<Home> {
         ],
       ),
       drawer: Drawer(),
-      body: PageView(
-
-      ),
+      body: _pages[currentPageIndex],
       bottomNavigationBar: NavigationBar(
         onDestinationSelected: (int index) {
           setState(() {
@@ -88,14 +99,24 @@ class _HomeState extends State<Home> {
             label: 'Home',
           ),
           NavigationDestination(
-            icon: Badge(child: Icon(Icons.notifications_outlined)),
-            selectedIcon: Badge(child: Icon(Icons.notifications_sharp)),
-            label: 'Notifications',
+            selectedIcon: Icon(Icons.explore),
+            icon: Icon(Icons.explore_outlined),
+            label: 'Community',
           ),
           NavigationDestination(
-            icon: Badge(label: Text('2'), child: Icon(Icons.messenger_outline_outlined)),
-            selectedIcon: Badge(label: Text('2'), child: Icon(Icons.messenger_sharp)),
-            label: 'Chats',
+            selectedIcon: Icon(Icons.pets),
+            icon: Icon(Icons.pets_outlined),
+            label: 'Adopt',
+          ),
+          NavigationDestination(
+            selectedIcon: Icon(Icons.storefront),
+            icon: Icon(Icons.storefront_outlined),
+            label: 'Shop',
+          ),
+          NavigationDestination(
+            selectedIcon: Icon(Icons.person),
+            icon: Icon(Icons.person_outline),
+            label: 'Profile',
           ),
         ],
       ),
