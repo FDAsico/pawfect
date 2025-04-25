@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-class homePage extends StatefulWidget {
-  const homePage({super.key});
+class HomePage extends StatefulWidget {
+  const HomePage({super.key});
 
   @override
-  State<homePage> createState() => _homePageState();
+  State<HomePage> createState() => _HomePageState();
 }
 
-class _homePageState extends State<homePage> {
-  int IndexNavBar = 0;
+class _HomePageState extends State<HomePage> {
+  int indexNavBar = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -30,8 +30,7 @@ class _homePageState extends State<homePage> {
         ]
       ),
 
-      body: Container(
-        child: Column(
+      body: Column(
 
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -208,9 +207,7 @@ class _homePageState extends State<homePage> {
                 ),
 
                 SizedBox(width: 230),
-
-                Container(
-                  child: InkWell(
+                  InkWell(
                     onTap: () {},
                     child: Text(
                       "See more",
@@ -221,7 +218,6 @@ class _homePageState extends State<homePage> {
                       ),
                     ),
                   ),
-                )
               ],
             ),
 
@@ -279,7 +275,6 @@ class _homePageState extends State<homePage> {
           ],
 
         ),
-      ),
 
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
@@ -288,10 +283,10 @@ class _homePageState extends State<homePage> {
         unselectedItemColor: Colors.grey,
 
         onTap: (index) {
-          setState(() => IndexNavBar = index);
+          setState(() => indexNavBar = index);
         },
         
-        currentIndex: IndexNavBar,
+        currentIndex: indexNavBar,
 
         items: [
           BottomNavigationBarItem(
@@ -328,6 +323,8 @@ class _homePageState extends State<homePage> {
 }
 
 class NavigationDrawer extends StatelessWidget {
+  const NavigationDrawer({super.key});
+
   @override
   Widget build(BuildContext context) => Drawer();
 }
