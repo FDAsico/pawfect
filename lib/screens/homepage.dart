@@ -111,7 +111,7 @@ class _HomePageState extends State<HomePage> {
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(25),
                         child: Image(
-                          image: AssetImage('images/dog-picture.jpg')
+                          image: AssetImage('assets/images/dog-picture.jpg')
                         ),
                       ),
                     ),
@@ -141,7 +141,7 @@ class _HomePageState extends State<HomePage> {
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(25),
                         child: Image(
-                          image: AssetImage('images/cat-picture.jpg')
+                          image: AssetImage('assets/images/cat-picture.jpg')
                         ),
                       ),
                     ),
@@ -171,7 +171,7 @@ class _HomePageState extends State<HomePage> {
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(25),
                         child: Image(
-                          image: AssetImage('images/rabbit-picture.jpg')
+                          image: AssetImage('assets/images/rabbit-picture.jpg')
                         ),
                       ),
                     ),
@@ -242,7 +242,7 @@ class _HomePageState extends State<HomePage> {
                   width: 164,
                   height: 220,
                   child: Image(
-                    image: AssetImage('images/pedigree-dog-food.jpg')
+                    image: AssetImage('assets/images/pedigree-dog-food.jpg')
                   ),
                 ),
 
@@ -266,7 +266,7 @@ class _HomePageState extends State<HomePage> {
                   width: 164,
                   height: 220,
                   child: Image(
-                    image: AssetImage('images/canin-cat-food.jpg')
+                    image: AssetImage('assets/images/canin-cat-food.jpg')
                   ),
                 ),
               ],
