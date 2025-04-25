@@ -99,17 +99,17 @@ class _HomePageState extends State<HomePage> {
                 Column(
                   children: [
                     Container(
-                      margin: EdgeInsets.only(left: 13.7),
+                      margin: EdgeInsets.only(left: 10),
                       padding: EdgeInsets.all(16),
                       decoration: BoxDecoration(
                         color: const Color.fromARGB(255, 163, 125, 227),
-                        borderRadius: BorderRadius.circular(55),
+                        borderRadius: BorderRadius.circular(40),
                         border: Border.all(width: 3)
                       ),
-                      width: 150,
-                      height: 150,
+                      width: 120,
+                      height: 120,
                       child: ClipRRect(
-                        borderRadius: BorderRadius.circular(33),
+                        borderRadius: BorderRadius.circular(25),
                         child: Image(
                           image: AssetImage('images/dog-picture.jpg')
                         ),
@@ -133,13 +133,13 @@ class _HomePageState extends State<HomePage> {
                       padding: EdgeInsets.all(16),
                       decoration: BoxDecoration(
                         color: const Color.fromARGB(255, 242, 124, 163),
-                        borderRadius: BorderRadius.circular(55),
+                        borderRadius: BorderRadius.circular(40),
                         border: Border.all(width: 3),
                       ),
-                      width: 150,
-                      height: 150,
+                      width: 120,
+                      height: 120,
                       child: ClipRRect(
-                        borderRadius: BorderRadius.circular(33),
+                        borderRadius: BorderRadius.circular(25),
                         child: Image(
                           image: AssetImage('images/cat-picture.jpg')
                         ),
@@ -163,13 +163,13 @@ class _HomePageState extends State<HomePage> {
                       padding: EdgeInsets.all(16),
                       decoration: BoxDecoration(
                         color: Colors.amber,
-                        borderRadius: BorderRadius.circular(55),
+                        borderRadius: BorderRadius.circular(40),
                         border: Border.all(width: 3)
                       ),
-                      width: 150,
-                      height: 150,
+                      width: 120,
+                      height: 120,
                       child: ClipRRect(
-                        borderRadius: BorderRadius.circular(33),
+                        borderRadius: BorderRadius.circular(25),
                         child: Image(
                           image: AssetImage('images/rabbit-picture.jpg')
                         ),
@@ -192,7 +192,7 @@ class _HomePageState extends State<HomePage> {
             Row(
               children: [
                 Container(
-                  margin: EdgeInsets.only(left: 44),
+                  margin: EdgeInsets.only(left: 10),
                   child: InkWell(
                     onTap: () {},
                     child: Text(
@@ -206,7 +206,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
 
-                SizedBox(width: 230),
+                SizedBox(width: 200),
                   InkWell(
                     onTap: () {},
                     child: Text(
@@ -225,7 +225,7 @@ class _HomePageState extends State<HomePage> {
             Row(
               children: [
                 Container(
-                  margin: EdgeInsets.only(left: 70),
+                  margin: EdgeInsets.only(left: 20),
                   padding: EdgeInsets.all(16),
                   decoration: BoxDecoration(
                     color: Colors.white,
@@ -246,10 +246,10 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
 
-                SizedBox(width: 30),
+                SizedBox(width: 20),
 
                 Container(
-                  margin: EdgeInsets.only(left: 13.7),
+                  margin: EdgeInsets.only(left: 20),
                   padding: EdgeInsets.all(16),
                   decoration: BoxDecoration(
                     color: Colors.white,
