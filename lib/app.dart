@@ -48,8 +48,8 @@ class _AppState extends State<App> {
             fontWeight: FontWeight.bold,
           ),
           titleLarge: GoogleFonts.poppins(
-            fontSize: 36,
-            fontWeight: FontWeight.w700,
+            fontSize: 20,
+            fontWeight: FontWeight.w500,
             color: Color.fromARGB(255, 91, 72, 139),
           ),
           bodyMedium: GoogleFonts.poppins(),
@@ -73,8 +73,8 @@ class _AppState extends State<App> {
             fontWeight: FontWeight.bold,
           ),
           titleLarge: GoogleFonts.poppins(
-            fontSize: 36,
-            fontWeight: FontWeight.w700,
+            fontSize: 20,
+            fontWeight: FontWeight.w500,
             color: Color(0xFFD0BCFE),
           ),
           bodyMedium: GoogleFonts.poppins(),

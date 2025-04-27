@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pawfect/screens/petgrooming.dart';
+import 'package:pawfect/screens/petboarding.dart';
+
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -132,35 +134,38 @@ class _HomePageState extends State<HomePage> {
                     ],
                   ),
                 ),
-                Column(
-                  children: [
-                    Container(
-                      margin: EdgeInsets.symmetric(horizontal: 10.0),
-                      padding: EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                          color: Color(0xFFEF9E1B),
+                GestureDetector(
+                  onTap: () => (Navigator.push(context, MaterialPageRoute(builder: (context) => PetBoarding()))),
+                  child: Column(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.symmetric(horizontal: 10.0),
+                        padding: EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                            color: Color(0xFFEF9E1B),
+                            borderRadius: BorderRadius.circular(40),
+                            border: Border.all(width: 1)),
+                        width: 110,
+                        height: 107,
+                        child: ClipRRect(
                           borderRadius: BorderRadius.circular(40),
-                          border: Border.all(width: 1)),
-                      width: 110,
-                      height: 107,
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(40),
-                        child: Image(
-                            fit: BoxFit.cover,
-                            image: AssetImage('assets/images/boarding.png')),
-                      ),
-                    ),
-                    Container(
-                      alignment: Alignment.center,
-                      padding: EdgeInsets.only(top: 5),
-                      child: Text(
-                        "Pet Boarding",
-                        style: TextStyle(
-                          fontSize: 15,
+                          child: Image(
+                              fit: BoxFit.cover,
+                              image: AssetImage('assets/images/boarding.png')),
                         ),
                       ),
-                    ),
-                  ],
+                      Container(
+                        alignment: Alignment.center,
+                        padding: EdgeInsets.only(top: 5),
+                        child: Text(
+                          "Pet Boarding",
+                          style: TextStyle(
+                            fontSize: 15,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),
