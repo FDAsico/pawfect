@@ -67,7 +67,7 @@ class _PetBoardingState extends State<PetBoarding> {
                 //-------------------------------------------SEARCH BAR-----------------------------------------//
 
                 SizedBox(height: 10),
-
+              
                 //-------------------------------------------CAROUSEL HEADER CARD-----------------------------------------//
                 CarouselSlider(
                   options: CarouselOptions(
@@ -80,14 +80,14 @@ class _PetBoardingState extends State<PetBoarding> {
                     Container( //-------------------------------------------1st header card
                       width: double.infinity,
                       padding: EdgeInsets.all(20),
+                      margin: EdgeInsets.all(5.0),
                       decoration: BoxDecoration(
                         color: Theme.of(context).colorScheme.primary,
                         borderRadius: BorderRadius.circular(10)
                       ),
-                    
+
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
-                              
                         children: [
                           ConstrainedBox(
                             constraints: BoxConstraints(maxWidth: 150),
@@ -114,10 +114,10 @@ class _PetBoardingState extends State<PetBoarding> {
                         ],
                       )
                     ),
-
                     Container( //-------------------------------------------2nd header card
                       width: double.infinity,
                       padding: EdgeInsets.all(20),
+                      margin: EdgeInsets.all(5.0),
                       decoration: BoxDecoration(
                         color: Theme.of(context).colorScheme.primary,
                         borderRadius: BorderRadius.circular(10)
