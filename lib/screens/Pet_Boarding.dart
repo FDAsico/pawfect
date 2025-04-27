@@ -13,7 +13,7 @@ class _PetBoardingState extends State<PetBoarding> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView(
-        padding: EdgeInsets.symmetric(vertical: 10),
+        padding: EdgeInsets.symmetric(vertical: 30),
 
         children: [
           Center(
@@ -27,14 +27,12 @@ class _PetBoardingState extends State<PetBoarding> {
                     decoration: InputDecoration(
                       hintText: "Search",
                       enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: Colors.grey
-                        )
+                        borderSide: BorderSide(color: Colors.grey),
+                        borderRadius: BorderRadius.circular(8)
                       ),
                       focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: Colors.grey
-                        )
+                        borderSide: BorderSide(color: Colors.grey),
+                        borderRadius: BorderRadius.circular(8)
                       ),
                       suffixIcon: Container(
                         decoration: BoxDecoration(
@@ -50,7 +48,6 @@ class _PetBoardingState extends State<PetBoarding> {
                         ),
                       ),
                       isDense: true,
-                      contentPadding: EdgeInsets.symmetric(vertical: 15, horizontal: 10)
                     ),
                   ),
                 ),
@@ -174,7 +171,7 @@ class _PetBoardingState extends State<PetBoarding> {
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(10),
                           child: Image(
-                            image: AssetImage('images/Francis-Dave-Asico.png')
+                            image: AssetImage('assets/images/Francis-Dave-Asico.png')
                           ),
                         ),
                       ),
@@ -263,7 +260,7 @@ class _PetBoardingState extends State<PetBoarding> {
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(10),
                           child: Image(
-                            image: AssetImage('images/Albert-Gian-Ocfemia.png')
+                            image: AssetImage('assets/images/Albert-Gian-Ocfemia.png')
                           ),
                         ),
                       ),
@@ -352,7 +349,7 @@ class _PetBoardingState extends State<PetBoarding> {
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(10),
                           child: Image(
-                            image: AssetImage('images/Christian-Paul-Malto.png')
+                            image: AssetImage('assets/images/Christian-Paul-Malto.png')
                           ),
                         ),
                       ),
@@ -441,7 +438,7 @@ class _PetBoardingState extends State<PetBoarding> {
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(10),
                           child: Image(
-                            image: AssetImage('images/Christian-Baldemoro.png')
+                            image: AssetImage('assets/images/Christian-Baldemoro.png')
                           ),
                         ),
                       ),
