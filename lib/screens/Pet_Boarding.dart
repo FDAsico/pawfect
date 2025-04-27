@@ -80,86 +80,80 @@ class _PetBoardingState extends State<PetBoarding> {
                     viewportFraction: 0.8
                   ),
                   items: [
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container( //-------------------------------------------1st header card
-                        width: double.infinity,
-                        padding: EdgeInsets.all(20),
-                        decoration: BoxDecoration(
-                          color: Theme.of(context).colorScheme.primary,
-                          borderRadius: BorderRadius.circular(10)
-                        ),
-                      
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                                
-                          children: [
-                            ConstrainedBox(
-                              constraints: BoxConstraints(maxWidth: 150),
-                              child: Text(
-                                "We'll treat your pet like family",
-                                style: TextStyle(
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 17,
-                                  color: Colors.white
-                                ),
+                    Container( //-------------------------------------------1st header card
+                      width: double.infinity,
+                      padding: EdgeInsets.all(20),
+                      decoration: BoxDecoration(
+                        color: Theme.of(context).colorScheme.primary,
+                        borderRadius: BorderRadius.circular(10)
+                      ),
+                    
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                              
+                        children: [
+                          ConstrainedBox(
+                            constraints: BoxConstraints(maxWidth: 150),
+                            child: Text(
+                              "We'll treat your pet like family",
+                              style: TextStyle(
+                                fontWeight: FontWeight.w600,
+                                fontSize: 17,
+                                color: Colors.white
                               ),
                             ),
-                                
-                            SizedBox(height: 10),
-                            ElevatedButton(
-                              onPressed: () {},
-                              style: ElevatedButton.styleFrom(
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(8)
-                                )
-                              ),
-                              child: Text("Book Now"),
-                            )
-                          ],
-                        )
-                      ),
+                          ),
+                              
+                          SizedBox(height: 10),
+                          ElevatedButton(
+                            onPressed: () {},
+                            style: ElevatedButton.styleFrom(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(8)
+                              )
+                            ),
+                            child: Text("Book Now"),
+                          )
+                        ],
+                      )
                     ),
 
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container( //-------------------------------------------2nd header card
-                        width: double.infinity,
-                        padding: EdgeInsets.all(20),
-                        decoration: BoxDecoration(
-                          color: Theme.of(context).colorScheme.primary,
-                          borderRadius: BorderRadius.circular(10)
-                        ),
-                      
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                                
-                          children: [
-                            ConstrainedBox(
-                              constraints: BoxConstraints(maxWidth: 150),
-                              child: Text(
-                                "We'll treat your pet like family",
-                                style: TextStyle(
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 17,
-                                  color: Colors.white
-                                ),
+                    Container( //-------------------------------------------2nd header card
+                      width: double.infinity,
+                      padding: EdgeInsets.all(20),
+                      decoration: BoxDecoration(
+                        color: Theme.of(context).colorScheme.primary,
+                        borderRadius: BorderRadius.circular(10)
+                      ),
+                    
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                              
+                        children: [
+                          ConstrainedBox(
+                            constraints: BoxConstraints(maxWidth: 150),
+                            child: Text(
+                              "We'll treat your pet like family",
+                              style: TextStyle(
+                                fontWeight: FontWeight.w600,
+                                fontSize: 17,
+                                color: Colors.white
                               ),
                             ),
-                                
-                            SizedBox(height: 10),
-                            ElevatedButton(
-                              onPressed: () {},
-                              style: ElevatedButton.styleFrom(
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(8)
-                                )
-                              ),
-                              child: Text("Book Now"),
-                            )
-                          ],
-                        )
-                      ),
+                          ),
+                              
+                          SizedBox(height: 10),
+                          ElevatedButton(
+                            onPressed: () {},
+                            style: ElevatedButton.styleFrom(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(8)
+                              )
+                            ),
+                            child: Text("Book Now"),
+                          )
+                        ],
+                      )
                     ),
                   ],
                 ),
