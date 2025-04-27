@@ -81,7 +81,7 @@ class _PetBoardingState extends State<PetBoarding> {
                   ),
                   items: [
                     Padding(
-                      padding: const EdgeInsets.all(10),
+                      padding: const EdgeInsets.all(8.0),
                       child: Container( //-------------------------------------------1st header card
                         width: double.infinity,
                         padding: EdgeInsets.all(20),
@@ -122,7 +122,7 @@ class _PetBoardingState extends State<PetBoarding> {
                     ),
 
                     Padding(
-                      padding: const EdgeInsets.all(10),
+                      padding: const EdgeInsets.all(8.0),
                       child: Container( //-------------------------------------------2nd header card
                         width: double.infinity,
                         padding: EdgeInsets.all(20),
