@@ -23,19 +23,16 @@ class _PetBoardingState extends State<PetBoarding> {
       appBar: AppBar(
         title: Text(
           "Pet Boarding",
-          style: TextStyle(fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
       ),
 
       body: ListView(
         padding: EdgeInsets.symmetric(vertical: 10),
-
         children: [
           Center(
             child: Column(
               children: [
-
                 //-------------------------------------------SEARCH BAR-----------------------------------------//
                 SizedBox(
                   width: 325,
