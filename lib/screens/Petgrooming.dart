@@ -1,23 +1,6 @@
 import 'package:flutter/material.dart';
 
 const Color primaryPurple = Color(0xFF5B488B);
-
-void main() {
-  runApp(const PetGroomingApp());
-}
-
-class PetGroomingApp extends StatelessWidget {
-  const PetGroomingApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: const PetGroomingScreen(),
-    );
-  }
-}
-
 class PetGroomingScreen extends StatelessWidget {
   const PetGroomingScreen({super.key});
 
@@ -28,7 +11,7 @@ class PetGroomingScreen extends StatelessWidget {
         title: const Text('Pet Grooming'),
         centerTitle: true,
       ),
-      backgroundColor: Colors.white,
+      //backgroundColor: Colors.white,
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
         child: Column(
@@ -107,7 +90,7 @@ class PetGroomingScreen extends StatelessWidget {
                   ClipRRect(
                     borderRadius: BorderRadius.circular(10),
                     child: Image.asset(
-                      'assets/dog2.png',
+                      'assets/images/dog2.png',
                       width: 115,
                       height: 89,
                       fit: BoxFit.cover,
@@ -153,12 +136,12 @@ class PetGroomingScreen extends StatelessWidget {
               crossAxisSpacing: 16,
               childAspectRatio: 3 / 3.5,
               children: [
-                serviceCard('Bath & Drying', 'assets/bath.png'),
-                serviceCard('Hair Trimming', 'assets/hair.png'),
-                serviceCard('Nail Cleaning', 'assets/nail.png'),
-                serviceCard('Ear Cleaning', 'assets/ear.png'),
-                serviceCard('Teeth Brushing', 'assets/brush.png'),
-                serviceCard('Flea Treatment', 'assets/flea.png'),
+                serviceCard('Bath & Drying', 'assets/images/bath.png'),
+                serviceCard('Hair Trimming', 'assets/images/hair.png'),
+                serviceCard('Nail Cleaning', 'assets/images/nail.png'),
+                serviceCard('Ear Cleaning', 'assets/images/ear.png'),
+                serviceCard('Teeth Brushing', 'assets/images/brush.png'),
+                serviceCard('Flea Treatment', 'assets/images/flea.png'),
               ],
             ),
           ],
