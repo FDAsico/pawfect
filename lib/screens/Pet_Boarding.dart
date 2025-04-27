@@ -1,6 +1,14 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
+/* 
+Authored by: Albert Gian Ocfemia
+Company: JaCode Facctory
+Project: Pawfect Naga
+Feature: [PAW-22] Pet boarding screen
+Description: pet boarding screen for those who are looking for someone to take care of their pets
+*/
+
 class PetBoarding extends StatefulWidget {
   const PetBoarding({super.key});
 
@@ -12,8 +20,16 @@ class _PetBoardingState extends State<PetBoarding> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "Pet Boarding",
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+        centerTitle: true,
+      ),
+
       body: ListView(
-        padding: EdgeInsets.symmetric(vertical: 30),
+        padding: EdgeInsets.symmetric(vertical: 10),
 
         children: [
           Center(
@@ -59,85 +75,91 @@ class _PetBoardingState extends State<PetBoarding> {
                 CarouselSlider(
                   options: CarouselOptions(
                     height: 150,
-                    enlargeCenterPage: true,
+                    enlargeCenterPage: false,
                     enableInfiniteScroll: false,
                     viewportFraction: 0.8
                   ),
                   items: [
-                    Container( //-------------------------------------------1st header card
-                      width: double.infinity,
-                      padding: EdgeInsets.all(20),
-                      decoration: BoxDecoration(
-                        color: Theme.of(context).colorScheme.primary,
-                        borderRadius: BorderRadius.circular(10)
-                      ),
-                    
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                              
-                        children: [
-                          ConstrainedBox(
-                            constraints: BoxConstraints(maxWidth: 150),
-                            child: Text(
-                              "We'll treat your pet like family",
-                              style: TextStyle(
-                                fontWeight: FontWeight.w600,
-                                fontSize: 17,
-                                color: Colors.white
+                    Padding(
+                      padding: const EdgeInsets.all(10),
+                      child: Container( //-------------------------------------------1st header card
+                        width: double.infinity,
+                        padding: EdgeInsets.all(20),
+                        decoration: BoxDecoration(
+                          color: Theme.of(context).colorScheme.primary,
+                          borderRadius: BorderRadius.circular(10)
+                        ),
+                      
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                                
+                          children: [
+                            ConstrainedBox(
+                              constraints: BoxConstraints(maxWidth: 150),
+                              child: Text(
+                                "We'll treat your pet like family",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 17,
+                                  color: Colors.white
+                                ),
                               ),
                             ),
-                          ),
-                              
-                          SizedBox(height: 10),
-                          ElevatedButton(
-                            onPressed: () {},
-                            style: ElevatedButton.styleFrom(
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(8)
-                              )
-                            ),
-                            child: Text("Book Now"),
-                          )
-                        ],
-                      )
+                                
+                            SizedBox(height: 10),
+                            ElevatedButton(
+                              onPressed: () {},
+                              style: ElevatedButton.styleFrom(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(8)
+                                )
+                              ),
+                              child: Text("Book Now"),
+                            )
+                          ],
+                        )
+                      ),
                     ),
 
-                    Container( //-------------------------------------------2nd header card
-                      width: double.infinity,
-                      padding: EdgeInsets.all(20),
-                      decoration: BoxDecoration(
-                        color: Theme.of(context).colorScheme.primary,
-                        borderRadius: BorderRadius.circular(10)
-                      ),
-                    
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                              
-                        children: [
-                          ConstrainedBox(
-                            constraints: BoxConstraints(maxWidth: 150),
-                            child: Text(
-                              "We'll treat your pet like family",
-                              style: TextStyle(
-                                fontWeight: FontWeight.w600,
-                                fontSize: 17,
-                                color: Colors.white
+                    Padding(
+                      padding: const EdgeInsets.all(10),
+                      child: Container( //-------------------------------------------2nd header card
+                        width: double.infinity,
+                        padding: EdgeInsets.all(20),
+                        decoration: BoxDecoration(
+                          color: Theme.of(context).colorScheme.primary,
+                          borderRadius: BorderRadius.circular(10)
+                        ),
+                      
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                                
+                          children: [
+                            ConstrainedBox(
+                              constraints: BoxConstraints(maxWidth: 150),
+                              child: Text(
+                                "We'll treat your pet like family",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 17,
+                                  color: Colors.white
+                                ),
                               ),
                             ),
-                          ),
-                              
-                          SizedBox(height: 10),
-                          ElevatedButton(
-                            onPressed: () {},
-                            style: ElevatedButton.styleFrom(
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(8)
-                              )
-                            ),
-                            child: Text("Book Now"),
-                          )
-                        ],
-                      )
+                                
+                            SizedBox(height: 10),
+                            ElevatedButton(
+                              onPressed: () {},
+                              style: ElevatedButton.styleFrom(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(8)
+                                )
+                              ),
+                              child: Text("Book Now"),
+                            )
+                          ],
+                        )
+                      ),
                     ),
                   ],
                 ),
