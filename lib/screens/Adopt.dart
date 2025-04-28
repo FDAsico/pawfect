@@ -7,21 +7,22 @@ class CatAdoptionScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
+    final size = MediaQuery.of(context).size; 
 
     return Scaffold(
       backgroundColor: const Color(0xFFEFEFEF), 
       body: SafeArea(
         child: Column(
           children: [
+            // Top Image with Heart Icon
             Stack(
               children: [
                 Container(
-                  height: size.height * 0.5,
+                  height: size.height * 0.5, 
                   width: double.infinity,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage('assets/images/cat.png'),
+                      image: AssetImage('assets/new_cat.png'),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -34,7 +35,7 @@ class CatAdoptionScreen extends StatelessWidget {
                     color: Colors.black,
                     bgColor: const Color(0xFFD6D6D6), 
                     onPressed: () {
-                      Navigator.pop(context);
+                      Navigator.pop(context);  
                     },
                   ),
                 ),
@@ -44,7 +45,7 @@ class CatAdoptionScreen extends StatelessWidget {
                   child: _circleButton(
                     icon: Icons.favorite_border,
                     color: Colors.red,
-                    bgColor: const Color(0xFFD6D6D6), 
+                    bgColor: const Color(0xFFD6D6D6),
                     onPressed: () {
                       // Favorite action
                     },
@@ -53,7 +54,8 @@ class CatAdoptionScreen extends StatelessWidget {
               ],
             ),
 
-            Expanded(
+         
+            Expanded( 
               child: Container(
                 width: double.infinity,
                 padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
@@ -64,22 +66,23 @@ class CatAdoptionScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    // Cat Name and Location
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const Text(
+                          children: const [
+                            Text(
                               'Ig',
                               style: TextStyle(
                                 fontSize: 28,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-                            const SizedBox(height: 4),
+                            SizedBox(height: 4),
                             Row(
-                              children: const [
+                              children: [
                                 Icon(Icons.location_on, size: 16, color: customPurple),
                                 SizedBox(width: 4),
                                 Text(
@@ -106,6 +109,7 @@ class CatAdoptionScreen extends StatelessWidget {
                     ),
                     const SizedBox(height: 24),
 
+                    // Info Cards
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: const [
@@ -121,7 +125,7 @@ class CatAdoptionScreen extends StatelessWidget {
                     Row(
                       children: [
                         const CircleAvatar(
-                          backgroundImage: AssetImage('assets/images/jani.png'),
+                          backgroundImage: AssetImage('assets/images/owner.png'),
                           radius: 24,
                         ),
                         const SizedBox(width: 12),
@@ -157,6 +161,7 @@ class CatAdoptionScreen extends StatelessWidget {
                     ),
                     const Spacer(),
 
+                    // Adopt Me Button
                     SizedBox(
                       width: double.infinity,
                       child: ElevatedButton(
@@ -188,6 +193,7 @@ class CatAdoptionScreen extends StatelessWidget {
     );
   }
 
+  // Circle Button Widget
   Widget _circleButton({
     required IconData icon,
     required Color color,
@@ -207,6 +213,7 @@ class CatAdoptionScreen extends StatelessWidget {
     );
   }
 }
+
 
 class _InfoCard extends StatelessWidget {
   final String title;
@@ -251,3 +258,4 @@ class _InfoCard extends StatelessWidget {
     );
   }
 }
+
