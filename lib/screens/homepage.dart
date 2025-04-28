@@ -2,6 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:pawfect/screens/petgrooming.dart';
 import 'package:pawfect/screens/petboarding.dart';
 
+/* 
+Authored by: Albert Gian Ocfemia
+Company: JaCode Facctory
+Project: Pawfect Naga
+Feature: [PAW-7] Hone screen
+Description: Home Page for users who are able to login
+*/
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
