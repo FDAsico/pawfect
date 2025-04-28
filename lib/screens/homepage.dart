@@ -7,7 +7,7 @@ Authored by: Albert Gian Ocfemia
 Company: JaCode Facctory
 Project: Pawfect Naga
 Feature: [PAW-7] Hone screen
-Description: Home Page for users who are able to login
+Description: Home Page to quickly access pet services like Pet Store, Pet Grooming, and Pet Boarding directly from the homepage.
 */
 
 class HomePage extends StatefulWidget {
