@@ -43,7 +43,7 @@ class _AppState extends State<App> {
           //onSecondary: onSecondary,
         ),
         textTheme: TextTheme(
-          displayLarge: const TextStyle(
+          displayLarge: GoogleFonts.poppins(
             fontSize: 72,
             fontWeight: FontWeight.bold,
           ),
@@ -68,7 +68,7 @@ class _AppState extends State<App> {
           //onSecondary: onSecondary,
         ),
         textTheme: TextTheme(
-          displayLarge: const TextStyle(
+          displayLarge: GoogleFonts.poppins(
             fontSize: 72,
             fontWeight: FontWeight.bold,
           ),
