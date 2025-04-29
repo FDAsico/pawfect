@@ -77,7 +77,6 @@ class _PetBoardingState extends State<PetBoarding> {
                   items: [
                     Carousel(description: 'We\'ll treat your pet like family', buttonText: 'Book Now'),
                     Carousel(description: 'Join our animal community', buttonText: 'Join Now'),
-                    Carousel(description: 'Pumi', buttonText: 'Adopt'),
                   ],
                 ),
                 //-------------------------------------------CAROUSEL HEADER CARD-----------------------------------------//
