@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 const Color primaryPurple = Color(0xFF5B488B);
 class PetGroomingScreen extends StatelessWidget {
@@ -66,18 +67,18 @@ class PetGroomingScreen extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Text(
+                         Text(
                           '60% OFF',
-                          style: TextStyle(
+                          style: GoogleFonts.poppins(
                             color: Colors.white,
                             fontSize: 30,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
                         const SizedBox(height: 4),
-                        const Text(
+                         Text(
                           'On hair & Spa treatment',
-                          style: TextStyle(
+                          style: GoogleFonts.poppins(
                             color: Colors.white,
                             fontWeight: FontWeight.w400,
                             fontSize: 15,
@@ -105,10 +106,10 @@ class PetGroomingScreen extends StatelessWidget {
             // Our Services title
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const [
+              children:  [
                 Text(
                   'Our Services',
-                  style: TextStyle(
+                  style: GoogleFonts.poppins(
                     fontSize: 15,
                     color: primaryPurple,
                     fontWeight: FontWeight.w600,
@@ -116,7 +117,7 @@ class PetGroomingScreen extends StatelessWidget {
                 ),
                 Text(
                   'See All',
-                  style: TextStyle(
+                  style: GoogleFonts.poppins(
                     fontSize: 12,
                     color: primaryPurple,
                     fontWeight: FontWeight.w500,
@@ -159,7 +160,7 @@ class PetGroomingScreen extends StatelessWidget {
         borderRadius: BorderRadius.circular(8),
         boxShadow: [
           BoxShadow(
-            color: Colors.grey.withOpacity(0.2),
+            color: Colors.grey.withValues(alpha: 0.2),
             blurRadius: 6,
             offset: const Offset(0, 4),
           ),
@@ -183,7 +184,7 @@ class PetGroomingScreen extends StatelessWidget {
               child: Text(
                 title,
                 textAlign: TextAlign.center,
-                style: const TextStyle(
+                style: GoogleFonts.poppins(
                   fontWeight: FontWeight.w500,
                   fontSize: 12,
                   color: Color(0xFF5B488B),
