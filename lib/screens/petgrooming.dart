@@ -2,17 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 const Color primaryPurple = Color(0xFF5B488B);
+
 class PetGroomingScreen extends StatelessWidget {
   const PetGroomingScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    var brightness = MediaQuery.of(context).platformBrightness;
+    bool isDarkMode = (brightness == Brightness.dark);
     return Scaffold(
       appBar: AppBar(
         title: const Text('Pet Grooming'),
         centerTitle: true,
       ),
-      //backgroundColor: Colors.white,
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
         child: Column(
@@ -28,9 +30,9 @@ class PetGroomingScreen extends StatelessWidget {
               child: Row(
                 children: [
                   const SizedBox(width: 12),
-                  Expanded(
+                  const Expanded(
                     child: TextField(
-                      decoration: const InputDecoration(
+                      decoration: InputDecoration(
                         border: InputBorder.none,
                         hintText: 'Search',
                       ),
@@ -50,7 +52,6 @@ class PetGroomingScreen extends StatelessWidget {
                 ],
               ),
             ),
-
             const SizedBox(height: 16),
 
             // Promo Banner
@@ -67,7 +68,7 @@ class PetGroomingScreen extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                         Text(
+                        Text(
                           '60% OFF',
                           style: GoogleFonts.poppins(
                             color: Colors.white,
@@ -76,7 +77,7 @@ class PetGroomingScreen extends StatelessWidget {
                           ),
                         ),
                         const SizedBox(height: 4),
-                         Text(
+                        Text(
                           'On hair & Spa treatment',
                           style: GoogleFonts.poppins(
                             color: Colors.white,
@@ -100,13 +101,12 @@ class PetGroomingScreen extends StatelessWidget {
                 ],
               ),
             ),
-
             const SizedBox(height: 24),
 
-            // Our Services title
+            // Our Services
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children:  [
+              children: [
                 Text(
                   'Our Services',
                   style: GoogleFonts.poppins(
@@ -125,7 +125,6 @@ class PetGroomingScreen extends StatelessWidget {
                 ),
               ],
             ),
-
             const SizedBox(height: 16),
 
             // Services Grid
@@ -167,31 +166,29 @@ class PetGroomingScreen extends StatelessWidget {
         ],
       ),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          const SizedBox(height: 8),
           ClipRRect(
-            borderRadius: const BorderRadius.vertical(top: Radius.circular(7)),
+            borderRadius: BorderRadius.circular(8),
             child: Image.asset(
               imagePath,
-              width: 138,
+              width: 130,
               height: 120,
               fit: BoxFit.cover,
             ),
           ),
-          const SizedBox(height: 2),
-          Expanded(
-            child: Center(
-              child: Text(
-                title,
-                textAlign: TextAlign.center,
-                style: GoogleFonts.poppins(
-                  fontWeight: FontWeight.w500,
-                  fontSize: 12,
-                  color: Color(0xFF5B488B),
-                ),
-              ),
+          const SizedBox(height: 4),
+          Text(
+            title,
+            textAlign: TextAlign.center,
+            style: GoogleFonts.poppins(
+              fontWeight: FontWeight.w500,
+              fontSize: 15,
+              color: primaryPurple,
             ),
           ),
+          const SizedBox(height: 4),
         ],
       ),
     );
