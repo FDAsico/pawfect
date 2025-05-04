@@ -1,55 +1,40 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(const PetAdoptionApp());
 
-class PetAdoptionApp extends StatelessWidget {
-  const PetAdoptionApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: PetHomePage(),
-    );
-  }
-}
-
-class PetHomePage extends StatefulWidget {
-  const PetHomePage({super.key});
+class PetAdoptPage extends StatefulWidget {
+  const PetAdoptPage({super.key});
 
   @override
-  State<PetHomePage> createState() => _PetHomePageState();
+  State<PetAdoptPage> createState() => _PetAdoptPageState();
 }
 
-class _PetHomePageState extends State<PetHomePage> {
+class _PetAdoptPageState extends State<PetAdoptPage> {
   final categories = ['Cat', 'Dog', 'Fish', 'Bird'];
   String selectedCategory = 'Cat';
 
   final adoptPets = const [
-    {'name': 'Ig', 'image': 'assets/cat3.jpeg', 'gender': 'Male'},
-    {'name': 'Lorna', 'image': 'assets/cat1.jpg', 'gender': 'Male'},
-    {'name': 'Max', 'image': 'assets/cat5.jpg', 'gender': 'Male'},
-    {'name': 'Bella', 'image': 'assets/cat2.jpg', 'gender': 'Female'},
-    {'name': 'Charlie', 'image': 'assets/cat4.jpg', 'gender': 'Male'},
+    {'name': 'Ig', 'image': 'assets/images/cat3.jpeg', 'gender': 'Male'},
+    {'name': 'Lorna', 'image': 'assets/images/cat1.jpg', 'gender': 'Male'},
+    {'name': 'Max', 'image': 'assets/images/cat5.jpg', 'gender': 'Male'},
+    {'name': 'Bella', 'image': 'assets/images/cat2.jpg', 'gender': 'Female'},
+    {'name': 'Charlie', 'image': 'assets/images/cat4.jpg', 'gender': 'Male'},
   ];
 
   final suggestions = const [
-    {'name': 'Blessing', 'image': 'assets/dog3.jpg', 'gender': 'Female'},
-    {'name': 'Pumi', 'image': 'assets/fish2.jpg', 'gender': 'Female'},
-    {'name': 'Christian', 'image': 'assets/dog4.jpg', 'gender': 'Female'},
+    {'name': 'Blessing', 'image': 'assets/images/dog3.jpg', 'gender': 'Female'},
+    {'name': 'Pumi', 'image': 'assets/images/fish2.jpg', 'gender': 'Female'},
+    {'name': 'Christian', 'image': 'assets/images/dog4.jpg', 'gender': 'Female'},
   ];
 
   final suggestions2 = const [
-    {'name': 'Toby', 'image': 'assets/dog2.jpg', 'gender': 'Male'},
-    {'name': 'Luna', 'image': 'assets/dog1.jpg', 'gender': 'Male'},
-    {'name': 'Oscar', 'image': 'assets/fish1.jpg', 'gender': 'Male'},
+    {'name': 'Toby', 'image': 'assets/images/dog2.jpg', 'gender': 'Male'},
+    {'name': 'Luna', 'image': 'assets/images/dog1.jpg', 'gender': 'Male'},
+    {'name': 'Oscar', 'image': 'assets/images/fish1.jpg', 'gender': 'Male'},
   ];
 
   List<bool> likedPets = List.generate(5, (index) => false);
   List<bool> likedSuggestions = List.generate(3, (index) => false);
   List<bool> likedSuggestions2 = List.generate(3, (index) => false);
-
-  int _selectedIndex = 0;
 
   void _toggleHeart(int index, String section) {
     setState(() {
@@ -66,26 +51,6 @@ class _PetHomePageState extends State<PetHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        leading: const Icon(Icons.menu, color: Colors.black),
-        title: Row(
-          children: const [
-            SizedBox(width: 8),
-            Text(
-              "How are you today!",
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 18,
-              ),
-            ),
-          ],
-        ),
-        actions: [
-          _iconButton(Icons.notifications_none_outlined),
-          _iconButton(Icons.shopping_cart_outlined),
-        ],
-      ),
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
@@ -102,7 +67,6 @@ class _PetHomePageState extends State<PetHomePage> {
           _buildSuggestionsSection(suggestions2, likedSuggestions2, 'suggestion2'),
         ],
       ),
-      bottomNavigationBar: _buildBottomNavBar(),
     );
   }
 
@@ -152,7 +116,7 @@ class _PetHomePageState extends State<PetHomePage> {
                     borderRadius: BorderRadius.circular(25),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.grey.withOpacity(0.4),
+                        color: Colors.grey.withValues(alpha: 0.4),
                         spreadRadius: 2,
                         blurRadius: 8,
                         offset: const Offset(0, 4),
@@ -228,29 +192,6 @@ class _PetHomePageState extends State<PetHomePage> {
           );
         }).toList(),
       ),
-    );
-  }
-
-  Widget _buildBottomNavBar() {
-    return BottomNavigationBar(
-      currentIndex: _selectedIndex,
-      selectedItemColor: Colors.purple,
-      unselectedItemColor: Colors.grey,
-      type: BottomNavigationBarType.fixed,
-      showSelectedLabels: true,
-      showUnselectedLabels: true,
-      onTap: (index) {
-        setState(() {
-          _selectedIndex = index;
-        });
-      },
-      items: const [
-        BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-        BottomNavigationBarItem(icon: Icon(Icons.group), label: 'Community'),
-        BottomNavigationBarItem(icon: Icon(Icons.pets), label: 'Adopt'),
-        BottomNavigationBarItem(icon: Icon(Icons.shop), label: 'Shop'),
-        BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
-      ],
     );
   }
 }

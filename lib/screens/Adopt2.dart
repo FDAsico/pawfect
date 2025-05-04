@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
 class PetDetailsPage extends StatefulWidget {
+  const PetDetailsPage({super.key});
+
   @override
-  _PetDetailsPageState createState() => _PetDetailsPageState();
+  State<PetDetailsPage> createState() => _PetDetailsPageState();
 }
 
 class _PetDetailsPageState extends State<PetDetailsPage> {
