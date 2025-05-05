@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pawfect/screens/Adopt1.dart';
+import 'package:pawfect/screens/adoptpage.dart';
 import 'package:pawfect/screens/discoverpage.dart';
 import 'package:pawfect/screens/homepage.dart';
 import 'package:pawfect/screens/profilepage.dart';
