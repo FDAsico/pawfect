@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class the_notification extends StatelessWidget {
-  const the_notification({super.key});
+class Notifications extends StatelessWidget {
+  const Notifications ({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -10,8 +10,8 @@ class the_notification extends StatelessWidget {
         title: Text(
           "Notifications",
           style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 30
+            fontWeight: FontWeight.w500,
+            fontSize: 24
           ),
         ),
         centerTitle: true,
@@ -19,7 +19,7 @@ class the_notification extends StatelessWidget {
 
       body: ListView(
         padding: EdgeInsets.symmetric(vertical: 10),
-
+        primary: false,
         children: [
           Center(
             child: Column(
@@ -27,15 +27,15 @@ class the_notification extends StatelessWidget {
                 Container(
                   margin: EdgeInsets.only(top: 100),
                   child: Image(
-                    image: AssetImage('images/bell.png')
+                    image: AssetImage('assets/images/bell.png')
                   ),
                 ),
           
                 Text(
                   "No notifications.",
                   style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 30
+                    fontWeight: FontWeight.w500,
+                    fontSize: 24
                   ),
                 ),
           
@@ -43,10 +43,10 @@ class the_notification extends StatelessWidget {
                 ConstrainedBox(
                   constraints: BoxConstraints(maxWidth: 300),
                   child: Text(
-                    "You have no notifications yet. Please come back later.",
+                    "You have no notifications yet.\nPlease come back later.",
                     style: TextStyle(
                       color: const Color.fromARGB(255, 99, 57, 177),
-                      fontSize: 20
+                      fontSize: 16
                     ),
                     textAlign: TextAlign.center,
                   ),
