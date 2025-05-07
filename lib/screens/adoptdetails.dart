@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pawfect/screens/adoptpage.dart';
 
 class PetDetailsPage extends StatefulWidget {
   const PetDetailsPage({super.key});
@@ -23,7 +24,7 @@ class _PetDetailsPageState extends State<PetDetailsPage> {
           SizedBox(
             height: screenHeight * 0.6,
             width: double.infinity,
-            child: Image.asset('assets/cat1.jpg', fit: BoxFit.cover),
+            child: Image.asset('assets/images/cat1.jpg', fit: BoxFit.cover),
           ),
 
           // Back button
@@ -33,13 +34,14 @@ class _PetDetailsPageState extends State<PetDetailsPage> {
             child: GestureDetector(
               onTap: () => Navigator.pop(context),
               child: Container(
+                margin: EdgeInsets.only(top: 20),
                 padding: EdgeInsets.all(6),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(10),
                   boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 5)],
                 ),
-                child: Icon(Icons.arrow_back, color: Colors.deepPurple),
+                child: Icon(Icons.arrow_back, color: primaryPurple),
               ),
             ),
           ),
@@ -64,7 +66,7 @@ class _PetDetailsPageState extends State<PetDetailsPage> {
                     children: [
                       Row(
                         children: [
-                          Text("Ig", style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
+                          Text("Ig", style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600)),
                           SizedBox(width: 6),
                           Icon(Icons.male, color: Colors.blue),
                         ],
@@ -79,14 +81,12 @@ class _PetDetailsPageState extends State<PetDetailsPage> {
                     ],
                   ),
 
-                  SizedBox(height: 8),
-
                   // Location
                   Row(
                     children: [
-                      Icon(Icons.location_on, color: Colors.purple, size: 16),
+                      Icon(Icons.location_on_outlined, color: primaryPurple, size: 20),
                       SizedBox(width: 4),
-                      Text("Naga City (500m)", style: TextStyle(fontSize: 15, color: Colors.purple)),
+                      Text("Naga City (500m)", style: TextStyle(fontSize: 14, color: primaryPurple)),
                     ],
                   ),
 
@@ -109,22 +109,22 @@ class _PetDetailsPageState extends State<PetDetailsPage> {
                   Row(
                     children: [
                       CircleAvatar(
-                        backgroundImage: AssetImage("assets/cat1.jpg"),
+                        backgroundImage: AssetImage("assets/images/cat1.jpg"),
                         radius: 20,
                       ),
                       SizedBox(width: 10),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text("Owner by:", style: TextStyle(fontSize: 14, color: Colors.grey)),
-                          Text("Abdul Jomar Sins", style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+                          Text("Owner by:", style: TextStyle(fontSize: 10, color: Color(0xFFB4AEAE))),
+                          Text("Abdul Jomar Sins", style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500)),
                         ],
                       ),
                       Spacer(),
                       Container(
                         padding: EdgeInsets.all(7),
                         decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 162, 110, 172),
+                          color: primaryPurple,
                           shape: BoxShape.circle,
                         ),
                         child: Icon(Icons.chat_bubble_outline, color: Colors.white),
@@ -139,7 +139,7 @@ class _PetDetailsPageState extends State<PetDetailsPage> {
                       child: ElevatedButton(
                         onPressed: () {},
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.purple,
+                          backgroundColor: primaryPurple,
                           foregroundColor: Colors.white,
                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                           padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.25, vertical: 12),
@@ -168,10 +168,10 @@ class _PetDetailsPageState extends State<PetDetailsPage> {
       ),
       child: Column(
         children: [
-          Text(value, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
+          Text(value, style: TextStyle(fontWeight: FontWeight.w500, fontSize: 12)),
           SizedBox(height: 4),
-          Text(label, style: TextStyle(fontSize: 12, color: Colors.grey)),
-        ],
+          Text(label, style: TextStyle(fontSize: 10, color: Color(0xFFB4AEAE))),
+        ],  
       ),
     );
   }

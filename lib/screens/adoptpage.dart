@@ -1,5 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:pawfect/screens/adoptdetails.dart';
 
+const Color primaryPurple = Color(0xFF5B488B);
+const Color secondaryPurple = Color(0xFF827397);
+const Color boyIndicator = Color(0xFF8EB1E5);
+const Color girlIndicator = Color(0xFFF672E1);
+const Color categoryIndicator = Color(0xFF594789);
+const Color offcategoryIndicator = Color(0xFFFCFBFF);
 
 class PetAdoptPage extends StatefulWidget {
   const PetAdoptPage({super.key});
@@ -26,15 +33,8 @@ class _PetAdoptPageState extends State<PetAdoptPage> {
     {'name': 'Christian', 'image': 'assets/images/dog4.jpg', 'gender': 'Female'},
   ];
 
-  final suggestions2 = const [
-    {'name': 'Toby', 'image': 'assets/images/dog2.jpg', 'gender': 'Male'},
-    {'name': 'Luna', 'image': 'assets/images/dog1.jpg', 'gender': 'Male'},
-    {'name': 'Oscar', 'image': 'assets/images/fish1.jpg', 'gender': 'Male'},
-  ];
-
   List<bool> likedPets = List.generate(5, (index) => false);
   List<bool> likedSuggestions = List.generate(3, (index) => false);
-  List<bool> likedSuggestions2 = List.generate(3, (index) => false);
 
   void _toggleHeart(int index, String section) {
     setState(() {
@@ -42,8 +42,6 @@ class _PetAdoptPageState extends State<PetAdoptPage> {
         likedPets[index] = !likedPets[index];
       } else if (section == 'suggestion1') {
         likedSuggestions[index] = !likedSuggestions[index];
-      } else if (section == 'suggestion2') {
-        likedSuggestions2[index] = !likedSuggestions2[index];
       }
     });
   }
@@ -63,26 +61,24 @@ class _PetAdoptPageState extends State<PetAdoptPage> {
           _sectionHeader("Suggestions", ""),
           const SizedBox(height: 20),
           _buildSuggestionsSection(suggestions, likedSuggestions, 'suggestion1'),
-          const SizedBox(height: 20),
-          _buildSuggestionsSection(suggestions2, likedSuggestions2, 'suggestion2'),
         ],
       ),
     );
   }
 
-  Widget _iconButton(IconData icon) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 8),
-      child: Container(
-        padding: const EdgeInsets.all(8),
-        decoration: BoxDecoration(
-          color: const Color(0xFFF5F5F5),
-          borderRadius: BorderRadius.circular(12),
-        ),
-        child: Icon(icon, color: Colors.black),
-      ),
-    );
-  }
+  // Widget _iconButton(IconData icon) {
+  //   return Padding(
+  //     padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 8),
+  //     child: Container(
+  //       padding: const EdgeInsets.all(8),
+  //       decoration: BoxDecoration(
+  //         color: const Color(0xFFF5F5F5),
+  //         borderRadius: BorderRadius.circular(12),
+  //       ),
+  //       child: Icon(icon, color: Colors.black),
+  //     ),
+  //   );
+  // }
 
   Widget _buildPetCategories() {
     return Column(
@@ -93,11 +89,11 @@ class _PetAdoptPageState extends State<PetAdoptPage> {
           children: const [
             Text(
               "Pet Categories",
-              style: TextStyle(fontWeight: FontWeight.bold, color: Colors.purple, fontSize: 22),
+              style: TextStyle(fontWeight: FontWeight.w600, color: primaryPurple, fontSize: 18),
             ),
             Text(
               "More Category",
-              style: TextStyle(color: Colors.grey, fontSize: 14),
+              style: TextStyle(fontWeight: FontWeight.w500, color: secondaryPurple, fontSize: 12),
             ),
           ],
         ),
@@ -112,7 +108,7 @@ class _PetAdoptPageState extends State<PetAdoptPage> {
                   padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 18),
                   margin: const EdgeInsets.symmetric(horizontal: 8),
                   decoration: BoxDecoration(
-                    color: isSelected ? Colors.purple : Colors.grey.shade200,
+                    color: isSelected ? categoryIndicator : offcategoryIndicator,
                     borderRadius: BorderRadius.circular(25),
                     boxShadow: [
                       BoxShadow(
@@ -145,8 +141,8 @@ class _PetAdoptPageState extends State<PetAdoptPage> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(title, style: const TextStyle(fontWeight: FontWeight.bold, color: Colors.purple, fontSize: 22)),
-        Text(action, style: TextStyle(color: Colors.grey.shade600, fontSize: 16)),
+        Text(title, style: const TextStyle(fontWeight: FontWeight.w600, color: primaryPurple, fontSize: 18)),
+        Text(action, style: TextStyle(fontWeight: FontWeight.w500, color: secondaryPurple, fontSize: 12)),
       ],
     );
   }
@@ -214,80 +210,83 @@ class PetCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 220,
-      height: 250,
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(20),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.grey.shade300,
-            blurRadius: 6,
-            spreadRadius: 2,
-            offset: const Offset(0, 4),
-          ),
-        ],
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Stack(
-            children: [
-              ClipRRect(
-                borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
-                child: Image.asset(imagePath, width: 220, height: 200, fit: BoxFit.cover),
-              ),
-              Positioned(
-                right: 12,
-                top: 12,
-                child: GestureDetector(
-                  onTap: onHeartTap,
-                  child: Container(
-                    padding: const EdgeInsets.all(4),
-                    decoration: BoxDecoration(
-                      color: const Color(0xFFF5F5F5),
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: Icon(
-                      isLiked ? Icons.favorite : Icons.favorite_border,
-                      color: Colors.red,
-                      size: 20,
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    return GestureDetector(
+      onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => PetDetailsPage())),
+      child: Container(
+        width: 220,
+        height: 250,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(20),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.shade300,
+              blurRadius: 6,
+              spreadRadius: 2,
+              offset: const Offset(0, 4),
+            ),
+          ],
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Stack(
               children: [
-                Text(
-                  name,
-                  style: const TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18,
-                  ),
+                ClipRRect(
+                  borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
+                  child: Image.asset(imagePath, width: 220, height: 200, fit: BoxFit.cover),
                 ),
-                Container(
-                  margin: const EdgeInsets.only(top: 4),
-                  padding: const EdgeInsets.all(6),
-                  decoration: BoxDecoration(
-                    color: const Color(0xFFF5F5F5),
-                    shape: BoxShape.circle,
-                  ),
-                  child: Icon(
-                    gender == 'Female' ? Icons.female : Icons.male,
-                    size: 20,
-                    color: Colors.purple,
+                Positioned(
+                  right: 12,
+                  top: 12,
+                  child: GestureDetector(
+                    onTap: onHeartTap,
+                    child: Container(
+                      padding: const EdgeInsets.all(4),
+                      decoration: BoxDecoration(
+                        color: const Color(0xFFF5F5F5),
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: Icon(
+                        isLiked ? Icons.favorite : Icons.favorite_border,
+                        color: Colors.red,
+                        size: 20,
+                      ),
+                    ),
                   ),
                 ),
               ],
             ),
-          ),
-        ],
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    name,
+                    style: const TextStyle(
+                      fontWeight: FontWeight.w600,
+                      fontSize: 14,
+                    ),
+                  ),
+                  Container(
+                    margin: const EdgeInsets.only(top: 4),
+                    padding: const EdgeInsets.all(6),
+                    decoration: BoxDecoration(
+                      color: const Color(0xFFD9D9D9),
+                      shape: BoxShape.circle,
+                    ),
+                    child: Icon(
+                      gender == 'Female' ? Icons.female : Icons.male,
+                      size: 20,
+                      color: gender == 'Female' ? girlIndicator : boyIndicator,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
