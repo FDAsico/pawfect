@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pawfect/screens/adoptpage.dart';
 import 'package:pawfect/screens/discoverpage.dart';
 import 'package:pawfect/screens/homepage.dart';
+import 'package:pawfect/screens/notifications.dart';
 import 'package:pawfect/screens/profilepage.dart';
 import 'package:pawfect/screens/shoppage.dart';
 
@@ -57,7 +58,7 @@ class _HomeState extends State<Home> {
         actionsPadding: EdgeInsets.only(right: 15.0),
         actions: [
           IconButton(
-            onPressed: () => (), 
+            onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => Notifications())), 
             icon: Icon(Icons.notifications_outlined),
             splashRadius: 8,
             style: ButtonStyle(
