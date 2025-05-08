@@ -83,432 +83,94 @@ class _Messaging_PageState extends State<Messaging_Page> {
                       ),
                     ),
 
-                    //------------------------------------------- PERSON 1 -----------------------------------------//
-                    Container(
-                      padding: EdgeInsets.symmetric(vertical: 12, horizontal: 16),
-                      decoration: BoxDecoration(
-                        border: Border(bottom: BorderSide(color: Colors.grey.shade300))
-                      ),
-
-                      child: Row(
-                        children: [
-                          CircleAvatar(
-                            radius: 25,
-                            backgroundImage: AssetImage('images/Mark_Zuckerberg.jpg'),
-                          ),
-                          SizedBox(width: 12),
-                          Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  "Mark Zuckerberg",
-                                  style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold
-                                  ),
-                                ),
-                                SizedBox(height: 4),
-                                Text(
-                                  "You sent a message",
-                                  style: TextStyle(
-                                    color: Colors.grey.shade600
-                                  ),
-                                  overflow: TextOverflow.ellipsis,
-                                )
-                              ],
-                            )
-                          ),
-                          Text(
-                            "New",
-                            style: TextStyle(
-                              fontSize: 12,
-                              color: Colors.grey.shade600
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    //------------------------------------------- PERSON 1 -----------------------------------------//
-
-                    //------------------------------------------- PERSON 2 -----------------------------------------//
-                    Container(
-                      padding: EdgeInsets.symmetric(vertical: 12, horizontal: 16),
-                      decoration: BoxDecoration(
-                        border: Border(bottom: BorderSide(color: Colors.grey.shade300))
-                      ),
-
-                      child: Row(
-                        children: [
-                          CircleAvatar(
-                            radius: 25,
-                            backgroundImage: AssetImage('images/Elon_Musk.jpg'),
-                          ),
-                          SizedBox(width: 12),
-                          Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  "Elon Musk",
-                                  style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold
-                                  ),
-                                ),
-                                SizedBox(height: 4),
-                                Text(
-                                  "Par!!",
-                                  style: TextStyle(
-                                    color: Colors.grey.shade600
-                                  ),
-                                  overflow: TextOverflow.ellipsis,
-                                )
-                              ],
-                            )
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            children: [
-                              Text(
-                                "Today, 5:38pm",
-                                style: TextStyle(
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.bold
-                                ),
-                              ),
-                              SizedBox(height: 4),
-                              Text(
-                                "seen",
-                                style: TextStyle(
-                                  fontSize: 11,
-                                  color: Colors.grey.shade500
-                                ),
-                              )
-                            ],
-                          )
-                        ],
-                      ),
-                    ),
-                    //------------------------------------------- PERSON 2 -----------------------------------------//
-
-                    //------------------------------------------- PERSON 3 -----------------------------------------//
-                    Container(
-                      padding: EdgeInsets.symmetric(vertical: 12, horizontal: 16),
-                      decoration: BoxDecoration(
-                        border: Border(bottom: BorderSide(color: Colors.grey.shade300))
-                      ),
-
-                      child: Row(
-                        children: [
-                          CircleAvatar(
-                            radius: 25,
-                            backgroundImage: AssetImage('images/jeff-bezos.jpg'),
-                          ),
-                          SizedBox(width: 12),
-                          Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  "Jeff Bezos",
-                                  style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold
-                                  ),
-                                ),
-                                SizedBox(height: 4),
-                                Text(
-                                  "Noted Par..",
-                                  style: TextStyle(
-                                    color: Colors.grey.shade600
-                                  ),
-                                  overflow: TextOverflow.ellipsis,
-                                )
-                              ],
-                            )
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            children: [
-                              Text(
-                                "Today, 2:10pm",
-                                style: TextStyle(
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.bold
-                                ),
-                              ),
-                              SizedBox(height: 4),
-                              Text(
-                                "seen",
-                                style: TextStyle(
-                                  fontSize: 11,
-                                  color: Colors.grey.shade500
-                                ),
-                              )
-                            ],
-                          )
-                        ],
-                      ),
-                    ),
-                    //------------------------------------------- PERSON 3 -----------------------------------------//
-
-                    //------------------------------------------- PERSON 4 -----------------------------------------//
-                    Container(
-                      padding: EdgeInsets.symmetric(vertical: 12, horizontal: 16),
-                      decoration: BoxDecoration(
-                        border: Border(bottom: BorderSide(color: Colors.grey.shade300))
-                      ),
-
-                      child: Row(
-                        children: [
-                          CircleAvatar(
-                            radius: 25,
-                            backgroundImage: AssetImage('images/ed-sheeran.jpg'),
-                          ),
-                          SizedBox(width: 12),
-                          Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  "Ed Sheeran",
-                                  style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold
-                                  ),
-                                ),
-                                SizedBox(height: 4),
-                                Text(
-                                  "Ed Sheeran sent a photo",
-                                  style: TextStyle(
-                                    color: Colors.grey.shade600
-                                  ),
-                                  overflow: TextOverflow.ellipsis,
-                                )
-                              ],
-                            )
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            children: [
-                              Text(
-                                "Today, 12:10pm",
-                                style: TextStyle(
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.bold
-                                ),
-                              ),
-                              SizedBox(height: 4),
-                              Container(
-                                padding: EdgeInsets.all(6),
-                                decoration: BoxDecoration(
-                                  color: Colors.red,
-                                  shape: BoxShape.circle
-                                ),
-                                child: Text(
-                                  "3",
-                                  style: TextStyle(
-                                    fontSize: 11,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              )
-                            ],
-                          )
-                        ],
-                      ),
-                    ),
-                    //------------------------------------------- PERSON 4 -----------------------------------------//
-
-                    //------------------------------------------- PERSON 5 -----------------------------------------//
-                    Container(
-                      padding: EdgeInsets.symmetric(vertical: 12, horizontal: 16),
-                      decoration: BoxDecoration(
-                        border: Border(bottom: BorderSide(color: Colors.grey.shade300))
-                      ),
-
-                      child: Row(
-                        children: [
-                          CircleAvatar(
-                            radius: 25,
-                            backgroundImage: AssetImage('images/jayson_tatum.jpg'),
-                          ),
-                          SizedBox(width: 12),
-                          Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  "Jayson Tatum",
-                                  style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold
-                                  ),
-                                ),
-                                SizedBox(height: 4),
-                                Text(
-                                  "You sent a message",
-                                  style: TextStyle(
-                                    color: Colors.grey.shade600
-                                  ),
-                                  overflow: TextOverflow.ellipsis,
-                                )
-                              ],
-                            )
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            children: [
-                              Text(
-                                "Today, 9:14am",
-                                style: TextStyle(
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.bold
-                                ),
-                              ),
-                              SizedBox(height: 25),
-                            ],
-                          )
-                        ],
-                      ),
-                    ),
-                    //------------------------------------------- PERSON 5 -----------------------------------------//
-
-                    //------------------------------------------- PERSON 6 -----------------------------------------//
-                    Container(
-                      padding: EdgeInsets.symmetric(vertical: 12, horizontal: 16),
-                      decoration: BoxDecoration(
-                        border: Border(bottom: BorderSide(color: Colors.grey.shade300))
-                      ),
-
-                      child: Row(
-                        children: [
-                          CircleAvatar(
-                            radius: 25,
-                            backgroundImage: AssetImage('images/LeBron_James.jpg'),
-                          ),
-                          SizedBox(width: 12),
-                          Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  "Lebron James",
-                                  style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold
-                                  ),
-                                ),
-                                SizedBox(height: 4),
-                                Text(
-                                  "Thanks!",
-                                  style: TextStyle(
-                                    color: Colors.grey.shade600
-                                  ),
-                                  overflow: TextOverflow.ellipsis,
-                                )
-                              ],
-                            )
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            children: [
-                              Text(
-                                "Yesterday, 8:10pm",
-                                style: TextStyle(
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.bold
-                                ),
-                              ),
-                              SizedBox(height: 4),
-                              Text(
-                                "seen",
-                                style: TextStyle(
-                                  fontSize: 11,
-                                  color: Colors.grey.shade500
-                                ),
-                              )
-                            ],
-                          )
-                        ],
-                      ),
-                    ),
-                    //------------------------------------------- PERSON 6 -----------------------------------------//
-
-                    //------------------------------------------- PERSON 7 -----------------------------------------//
-                    Container(
-                      padding: EdgeInsets.symmetric(vertical: 12, horizontal: 16),
-                      decoration: BoxDecoration(
-                        border: Border(bottom: BorderSide(color: Colors.grey.shade300))
-                      ),
-
-                      child: Row(
-                        children: [
-                          CircleAvatar(
-                            radius: 25,
-                            backgroundImage: AssetImage('images/ed-sheeran.jpg'),
-                          ),
-                          SizedBox(width: 12),
-                          Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  "Ed Sheeran",
-                                  style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold
-                                  ),
-                                ),
-                                SizedBox(height: 4),
-                                Text(
-                                  "Ed Sheeran sent a photo",
-                                  style: TextStyle(
-                                    color: Colors.grey.shade600
-                                  ),
-                                  overflow: TextOverflow.ellipsis,
-                                )
-                              ],
-                            )
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            children: [
-                              Text(
-                                "Today, 12:10pm",
-                                style: TextStyle(
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.bold
-                                ),
-                              ),
-                              SizedBox(height: 4),
-                              Container(
-                                padding: EdgeInsets.all(6),
-                                decoration: BoxDecoration(
-                                  color: Colors.red,
-                                  shape: BoxShape.circle
-                                ),
-                                child: Text(
-                                  "3",
-                                  style: TextStyle(
-                                    fontSize: 11,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              )
-                            ],
-                          )
-                        ],
-                      ),
-                    ),
-                    //------------------------------------------- PERSON 7 -----------------------------------------//
+                    chats("Mark Zuckerberg", "You sent a message", "Now", "", "images/Mark_Zuckerberg.jpg"),
+                    chats("Elon Musk", "Par!!", "Today, 5:30pm", "seen", "images/Elon_Musk.jpg"),
+                    chats("Jeff Bezos", "NOTED par..", "Today, 2:10pm", "seen", "images/jeff-bezos.jpg"),
+                    chats("Ed Sheeran", "Ed sheeran sent a photo", "Today, 12:10pm", "3", "images/ed-sheeran.jpg"),
+                    chats("Jayson Tatum", "You sent a message", "Today, 9:14am", "", "images/jayson_tatum.jpg"),
+                    chats("LeBron James", "Thanks!", "Yesterday, 8:10am", "seen", "images/Lebron_James.jpg"),
+                    chats("Ed Sheeran", "Ed sheeran sent a photo", "Today, 12:10pm", "3", "images/ed-sheeran.jpg")
                   ],
                 ),
               ],
             ),
+          )
+        ],
+      ),
+    );
+  }
+
+  Widget chats(String name, String message, String time, String status, String imagePath){
+    return Container(
+      padding: EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+      decoration: BoxDecoration(
+        border: Border(bottom: BorderSide(color: Colors.grey.shade300))
+      ),
+
+      child: Row(
+        children: [
+          CircleAvatar(
+            radius: 25,
+            backgroundImage: AssetImage(imagePath),
+          ),
+          SizedBox(width: 12),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  name,
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600
+                  ),
+                ),
+                SizedBox(height: 4),
+                Text(
+                  message,
+                  style: TextStyle(
+                    color: Colors.grey.shade600
+                  ),
+                  overflow: TextOverflow.ellipsis,
+                )
+              ],
+            )
+          ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              Text(
+                time,
+                style: TextStyle(
+                  fontSize: 12,
+                  fontWeight: FontWeight.bold
+                ),
+              ),
+              SizedBox(height: 4),
+              status == "3" && name == "Ed Sheeran"
+              ? Container(
+                padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                decoration: BoxDecoration(
+                  color: Colors.red,
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Text(
+                  status,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 11,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              )
+              : Text(
+                status,
+                style: TextStyle(
+                  fontSize: 11,
+                  color: Colors.grey.shade500,
+                ),
+              )
+            ],
           )
         ],
       ),
