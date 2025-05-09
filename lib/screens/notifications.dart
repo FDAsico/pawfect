@@ -25,9 +25,10 @@ class Notifications extends StatelessWidget {
             child: Column(
               children: [
                 Container(
-                  margin: EdgeInsets.only(top: 100),
+                  margin: EdgeInsets.only(top: 15.0),
                   child: Image(
-                    image: AssetImage('assets/images/bell.png')
+                    image: AssetImage('assets/images/bell.png'),
+                    height: 253,
                   ),
                 ),
           
