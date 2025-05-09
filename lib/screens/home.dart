@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pawfect/screens/adoptpage.dart';
+import 'package:pawfect/screens/chatscreen.dart';
 import 'package:pawfect/screens/discoverpage.dart';
 import 'package:pawfect/screens/homepage.dart';
 import 'package:pawfect/screens/notifications.dart';
@@ -28,7 +29,7 @@ class _HomeState extends State<Home> {
   final List<Widget> _pages = [
     const HomePage(),
     const DiscoverPage(),
-    const AdoptPage(),
+    const PetAdoptPage(),
     const ShopPage(),
     const ProfilePage()
   ];
@@ -57,6 +58,18 @@ class _HomeState extends State<Home> {
           ) : null, 
         actionsPadding: EdgeInsets.only(right: 15.0),
         actions: [
+          IconButton(
+            onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => MessagingPage())), 
+            icon: Icon(Icons.messenger_outline),
+            splashRadius: 8,
+            style: ButtonStyle(
+              shape: WidgetStateProperty.all<RoundedRectangleBorder>(
+                RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8.0),
+                ),
+              )
+            ),
+          ),
           IconButton(
             onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => Notifications())), 
             icon: Icon(Icons.notifications_outlined),
