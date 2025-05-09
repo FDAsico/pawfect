@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:pawfect/main.dart';
-import 'package:pawfect/screens/login.dart';
+import 'package:pawfect/route_generator.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:pawfect/screens/onbording.dart';
-// import 'screens/home/home.dart';
-
 class App extends StatefulWidget {
   const App({super.key});
 
@@ -31,7 +28,8 @@ class _AppState extends State<App> {
     return MaterialApp(
       debugShowCheckedModeBanner: false, 
       title: 'Pawfect Naga',
-      home: initScreen == 0 || initScreen == null ? OnBoarding() : Login(),
+      initialRoute: initScreen == 0 || initScreen == null ? '/onboarding' : '/login',
+      onGenerateRoute: RouteGenerator.generateRoute,
       theme: ThemeData(
         useMaterial3: true,
         colorScheme: ColorScheme.fromSeed(

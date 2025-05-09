@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:pawfect/screens/login.dart';
 
 /* 
 Authored by: Francis Dave A. Asico
@@ -23,12 +22,7 @@ class SignUp extends StatelessWidget {
           actions: <Widget>[
             if (initShow == 0 || initShow == null) ...[
               GestureDetector(
-                onTap:() => Navigator.pushReplacement(
-                  context, 
-                  MaterialPageRoute(
-                    builder: (context) => Login(),
-                  )
-                ),
+                onTap:() => Navigator.pushReplacementNamed(context, '/login'),
                 child: SizedBox(
                   width: 195,
                   child: Text(

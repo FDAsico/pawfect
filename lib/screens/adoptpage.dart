@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:pawfect/screens/adoptdetails.dart';
 
 const Color primaryPurple = Color(0xFF5B488B);
 const Color secondaryPurple = Color(0xFF827397);
@@ -211,7 +210,7 @@ class PetCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => PetDetailsPage())),
+      onTap: () => Navigator.pushNamed(context, '/adoptdetails'),
       child: Container(
         width: 220,
         height: 250,

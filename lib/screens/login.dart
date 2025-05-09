@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:pawfect/screens/home.dart';
-import 'package:pawfect/screens/forgot.dart';
 import 'package:pawfect/screens/signup.dart';
 /* 
 Authored by: Francis Dave A. Asico
@@ -129,12 +127,7 @@ class Login extends StatelessWidget {
                   )
                 ),
                 GestureDetector(
-                  onTap: () => Navigator.push(
-                    context, 
-                    MaterialPageRoute(
-                      builder: (context) => Forgot(),
-                    )
-                  ),
+                  onTap: () => Navigator.pushNamed(context, '/forgot'),
                   child: Container(
                     margin: EdgeInsets.fromLTRB(20.0, 8.0, 20.0, 25.0),
                     alignment: Alignment.bottomRight,
@@ -153,12 +146,7 @@ class Login extends StatelessWidget {
                   height: 58.0,
                   child: SizedBox(
                     child: FilledButton(
-                      onPressed: () => Navigator.pushReplacement(
-                          context, 
-                          MaterialPageRoute(
-                            builder: (context) => Home()
-                          )
-                        ), 
+                      onPressed: () => Navigator.pushReplacementNamed(context, '/home'), 
                       style: ButtonStyle(
                         shape: WidgetStateProperty.all<RoundedRectangleBorder>(
                           RoundedRectangleBorder(
