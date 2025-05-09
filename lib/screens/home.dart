@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pawfect/screens/adoptpage.dart';
 import 'package:pawfect/screens/bottomnavbar.dart';
-import 'package:pawfect/screens/chatscreen.dart';
 import 'package:pawfect/screens/discoverpage.dart';
 import 'package:pawfect/screens/homepage.dart';
-import 'package:pawfect/screens/notifications.dart';
 import 'package:pawfect/screens/profilepage.dart';
 import 'package:pawfect/screens/shoppage.dart';
 
@@ -41,8 +39,6 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    var brightness = MediaQuery.of(context).platformBrightness;
-    bool isDarkMode = (brightness == Brightness.dark);
     return Scaffold(
       appBar: AppBar(
         title: currentPageIndex == 0
