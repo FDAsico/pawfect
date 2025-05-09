@@ -1,35 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-class Messaging_Page extends StatefulWidget {
-  const Messaging_Page({super.key});
+class MessagingPage extends StatefulWidget {
+  const MessagingPage({super.key});
 
   @override
-  State<Messaging_Page> createState() => _Messaging_PageState();
+  State<MessagingPage> createState() => _MessagingPageState();
 }
 
-class _Messaging_PageState extends State<Messaging_Page> {
+class _MessagingPageState extends State<MessagingPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(
           "Messages",
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 30
-          ),
+          style: GoogleFonts.poppins(fontWeight: FontWeight.w500, fontSize: 24),
         ),
         centerTitle: true,
       ),
-
       body: ListView(
         padding: EdgeInsets.symmetric(vertical: 10),
-
         children: [
           Center(
             child: Column(
               children: [
-
                 //-------------------------------------------SEARCH BAR-----------------------------------------//
                 SizedBox(
                   width: 325,
@@ -41,9 +36,8 @@ class _Messaging_PageState extends State<Messaging_Page> {
                         borderRadius: BorderRadius.circular(8),
                       ),
                       focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.grey),
-                        borderRadius: BorderRadius.circular(8)
-                      ),
+                          borderSide: BorderSide(color: Colors.grey),
+                          borderRadius: BorderRadius.circular(8)),
                       suffixIcon: Container(
                         decoration: BoxDecoration(
                           color: Theme.of(context).colorScheme.primary,
@@ -67,29 +61,34 @@ class _Messaging_PageState extends State<Messaging_Page> {
 
                 Column(
                   children: [
-                    Container(
-                      child: Align(
-                        alignment: Alignment.centerLeft,
-                        child: Padding(
-                          padding: const EdgeInsets.only(left: 25),
-                          child: Text(
-                            "PEOPLE",
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20,
-                            ),
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 20),
+                        child: Text(
+                          "PEOPLE",
+                          style: TextStyle(
+                            fontWeight: FontWeight.w600,
+                            letterSpacing: 2,
+                            fontSize: 20,
                           ),
                         ),
                       ),
                     ),
-
-                    chats("Mark Zuckerberg", "You sent a message", "Now", "", "images/Mark_Zuckerberg.jpg"),
-                    chats("Elon Musk", "Par!!", "Today, 5:30pm", "seen", "images/Elon_Musk.jpg"),
-                    chats("Jeff Bezos", "NOTED par..", "Today, 2:10pm", "seen", "images/jeff-bezos.jpg"),
-                    chats("Ed Sheeran", "Ed sheeran sent a photo", "Today, 12:10pm", "3", "images/ed-sheeran.jpg"),
-                    chats("Jayson Tatum", "You sent a message", "Today, 9:14am", "", "images/jayson_tatum.jpg"),
-                    chats("LeBron James", "Thanks!", "Yesterday, 8:10am", "seen", "images/Lebron_James.jpg"),
-                    chats("Ed Sheeran", "Ed sheeran sent a photo", "Today, 12:10pm", "3", "images/ed-sheeran.jpg")
+                    chats("Mark Zuckerberg", "You sent a message", "Now", "",
+                        "assets/images/Mark_Zuckerberg.jpg"),
+                    chats("Elon Musk", "Par!!", "Today, 5:30pm", "seen",
+                        "assets/images/Elon_Musk.jpg"),
+                    chats("Jeff Bezos", "NOTED par..", "Today, 2:10pm", "seen",
+                        "assets/images/jeff-bezos.jpg"),
+                    chats("Ed Sheeran", "Ed sheeran sent a photo",
+                        "Today, 12:10pm", "3", "assets/images/ed-sheeran.jpg"),
+                    chats("Jayson Tatum", "You sent a message", "Today, 9:14am",
+                        "", "assets/images/jayson_tatum.jpg"),
+                    chats("LeBron James", "Thanks!", "Yesterday, 8:10am",
+                        "seen", "assets/images/LeBron_James.jpg"),
+                    chats("Ed Sheeran", "Ed sheeran sent a photo",
+                        "Today, 12:10pm", "3", "assets/images/ed-sheeran.jpg")
                   ],
                 ),
               ],
@@ -100,13 +99,12 @@ class _Messaging_PageState extends State<Messaging_Page> {
     );
   }
 
-  Widget chats(String name, String message, String time, String status, String imagePath){
+  Widget chats(String name, String message, String time, String status,
+      String imagePath) {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 12, horizontal: 16),
       decoration: BoxDecoration(
-        border: Border(bottom: BorderSide(color: Colors.grey.shade300))
-      ),
-
+          border: Border(bottom: BorderSide(color: Colors.grey.shade300))),
       child: Row(
         children: [
           CircleAvatar(
@@ -115,61 +113,57 @@ class _Messaging_PageState extends State<Messaging_Page> {
           ),
           SizedBox(width: 12),
           Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  name,
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600
-                  ),
+              child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                name,
+                style: TextStyle(fontSize: 15, fontWeight: FontWeight.w500),
+              ),
+              SizedBox(height: 4),
+              Text(
+                message,
+                style: GoogleFonts.inter(
+                  color: Color(0x80000000),
+                  fontWeight: FontWeight.w500,
+                  fontSize: 11
                 ),
-                SizedBox(height: 4),
-                Text(
-                  message,
-                  style: TextStyle(
-                    color: Colors.grey.shade600
-                  ),
-                  overflow: TextOverflow.ellipsis,
-                )
-              ],
-            )
-          ),
+                overflow: TextOverflow.ellipsis,
+              )
+            ],
+          )),
           Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Text(
                 time,
-                style: TextStyle(
-                  fontSize: 12,
-                  fontWeight: FontWeight.bold
-                ),
+                style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
               ),
               SizedBox(height: 4),
-              status == "3" && name == "Ed Sheeran"
-              ? Container(
-                padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                decoration: BoxDecoration(
-                  color: Colors.red,
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                child: Text(
-                  status,
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 11,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              )
-              : Text(
-                status,
-                style: TextStyle(
-                  fontSize: 11,
-                  color: Colors.grey.shade500,
-                ),
-              )
+              status == "3" && name == "Ed Sheeran" //????
+                  ? Container(
+                      padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                      decoration: BoxDecoration(
+                        color: Colors.red,
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: Text(
+                        status,
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 11,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    )
+                  : Text(
+                      status,
+                      style: GoogleFonts.inter(
+                        fontSize: 10,
+                        fontWeight: FontWeight.w500,
+                        color: const Color(0x80000000),
+                      ),
+                    )
             ],
           )
         ],
