@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:pawfect/main.dart';
-import 'package:pawfect/screens/login.dart';
+import 'package:pawfect/route_generator.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:pawfect/screens/onbording.dart';
-// import 'screens/home/home.dart';
-
 class App extends StatefulWidget {
   const App({super.key});
 
@@ -31,7 +28,8 @@ class _AppState extends State<App> {
     return MaterialApp(
       debugShowCheckedModeBanner: false, 
       title: 'Pawfect Naga',
-      home: initScreen == 0 || initScreen == null ? OnBoarding() : Login(),
+      initialRoute: initScreen == 0 || initScreen == null ? '/onboarding' : '/login',
+      onGenerateRoute: RouteGenerator.generateRoute,
       theme: ThemeData(
         useMaterial3: true,
         colorScheme: ColorScheme.fromSeed(
@@ -43,13 +41,13 @@ class _AppState extends State<App> {
           //onSecondary: onSecondary,
         ),
         textTheme: TextTheme(
-          displayLarge: const TextStyle(
+          displayLarge: GoogleFonts.poppins(
             fontSize: 72,
             fontWeight: FontWeight.bold,
           ),
           titleLarge: GoogleFonts.poppins(
-            fontSize: 36,
-            fontWeight: FontWeight.w700,
+            fontSize: 20,
+            fontWeight: FontWeight.w500,
             color: Color.fromARGB(255, 91, 72, 139),
           ),
           bodyMedium: GoogleFonts.poppins(),
@@ -68,13 +66,13 @@ class _AppState extends State<App> {
           //onSecondary: onSecondary,
         ),
         textTheme: TextTheme(
-          displayLarge: const TextStyle(
+          displayLarge: GoogleFonts.poppins(
             fontSize: 72,
             fontWeight: FontWeight.bold,
           ),
           titleLarge: GoogleFonts.poppins(
-            fontSize: 36,
-            fontWeight: FontWeight.w700,
+            fontSize: 20,
+            fontWeight: FontWeight.w500,
             color: Color(0xFFD0BCFE),
           ),
           bodyMedium: GoogleFonts.poppins(),

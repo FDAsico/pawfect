@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pawfect/screens/adoptpage.dart';
+import 'package:pawfect/screens/bottomnavbar.dart';
 import 'package:pawfect/screens/discoverpage.dart';
 import 'package:pawfect/screens/homepage.dart';
 import 'package:pawfect/screens/profilepage.dart';
@@ -21,105 +22,73 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-
   int currentPageIndex = 0;
-
   final List<Widget> _pages = [
     const HomePage(),
     const DiscoverPage(),
-    const AdoptPage(),
+    const PetAdoptPage(),
     const ShopPage(),
     const ProfilePage()
   ];
-  
+
+  void selectedDestination(int index) {
+    setState(() {
+      currentPageIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    var brightness = MediaQuery.of(context).platformBrightness;
-    bool isDarkMode = (brightness == Brightness.dark);
     return Scaffold(
       appBar: AppBar(
-        leading: Builder(
-          builder: (BuildContext context) {
-            return IconButton(
-              onPressed: () { Scaffold.of(context).openDrawer(); },
-              icon: const Icon(Icons.menu),
-              tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
-            );
-          }
-        ),
-        title: currentPageIndex == 0 ? Text(
-          'How are you doing today?',
-            style: TextStyle(
-              fontSize: 13,
-              fontWeight: FontWeight.normal,
-            ),
-          ) : null, 
+        title: currentPageIndex == 0
+            ? Text(
+                'How are you doing today?',
+                style: TextStyle(
+                  fontSize: 13,
+                  fontWeight: FontWeight.normal,
+                ),
+              )
+            : null,
         actionsPadding: EdgeInsets.only(right: 15.0),
         actions: [
           IconButton(
-            onPressed: () => (), 
+            onPressed: () => Navigator.pushNamed(context, '/messaging'),
+            icon: Icon(Icons.messenger_outline),
+            splashRadius: 8,
+            style: ButtonStyle(
+                shape: WidgetStateProperty.all<RoundedRectangleBorder>(
+              RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(8.0),
+              ),
+            )),
+          ),
+          IconButton(
+            onPressed: () => Navigator.pushNamed(context, '/notification'),
             icon: Icon(Icons.notifications_outlined),
             splashRadius: 8,
             style: ButtonStyle(
-              shape: WidgetStateProperty.all<RoundedRectangleBorder>(
-                RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(8.0),
-                ),
-              )
-            ),
+                shape: WidgetStateProperty.all<RoundedRectangleBorder>(
+              RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(8.0),
+              ),
+            )),
           ),
           IconButton(
-            onPressed: () => (), 
+            onPressed: () => (),
             icon: Icon(Icons.shopping_cart_outlined),
             splashRadius: 8,
             style: ButtonStyle(
-              shape: WidgetStateProperty.all<RoundedRectangleBorder>(
-                RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(8.0),
-                ),
-              )
-            ),
+                shape: WidgetStateProperty.all<RoundedRectangleBorder>(
+              RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(8.0),
+              ),
+            )),
           )
         ],
       ),
-      drawer: Drawer(),
       body: _pages[currentPageIndex],
-      bottomNavigationBar: NavigationBar(
-        onDestinationSelected: (int index) {
-          setState(() {
-            currentPageIndex = index;
-          });
-        },
-        indicatorColor: isDarkMode? Color(0xFF4A4459) : Color(0xFFD1BDF2),
-        selectedIndex: currentPageIndex,
-        destinations: const <Widget>[
-          NavigationDestination(
-            selectedIcon: Icon(Icons.home),
-            icon: Icon(Icons.home_outlined),
-            label: 'Home',
-          ),
-          NavigationDestination(
-            selectedIcon: Icon(Icons.explore),
-            icon: Icon(Icons.explore_outlined),
-            label: 'Community',
-          ),
-          NavigationDestination(
-            selectedIcon: Icon(Icons.pets),
-            icon: Icon(Icons.pets_outlined),
-            label: 'Adopt',
-          ),
-          NavigationDestination(
-            selectedIcon: Icon(Icons.storefront),
-            icon: Icon(Icons.storefront_outlined),
-            label: 'Shop',
-          ),
-          NavigationDestination(
-            selectedIcon: Icon(Icons.person),
-            icon: Icon(Icons.person_outline),
-            label: 'Profile',
-          ),
-        ],
-      ),
+      bottomNavigationBar: BottomMenu(selectedDestination: selectedDestination, currentPageIndex: currentPageIndex,),
     );
   }
 }
