@@ -146,7 +146,7 @@ class Login extends StatelessWidget {
                   height: 58.0,
                   child: SizedBox(
                     child: FilledButton(
-                      onPressed: () => Navigator.pushReplacementNamed(context, '/home'), 
+                      onPressed: () => Navigator.pushNamedAndRemoveUntil(context, '/home', (Route<dynamic> route) => false),
                       style: ButtonStyle(
                         shape: WidgetStateProperty.all<RoundedRectangleBorder>(
                           RoundedRectangleBorder(
