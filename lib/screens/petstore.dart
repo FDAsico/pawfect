@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'categories.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
-class petStore extends StatelessWidget {
-  petStore({super.key});
+class PetStorePage extends StatelessWidget {
+  PetStorePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -164,12 +163,7 @@ class petStore extends StatelessWidget {
             
                 Container(
                   child: InkWell(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => categories())
-                      );
-                    },
+                    onTap: () => Navigator.pushNamed(context, '/petcategorystore'),
                     child: Text(
                       "See all",
                       style: TextStyle(
