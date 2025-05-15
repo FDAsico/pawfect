@@ -116,7 +116,7 @@ class petStore extends StatelessWidget {
                           ],
                         ),
 
-                        SizedBox(height: 15),
+                        SizedBox(height: 5),
 
                         ElevatedButton(
                           onPressed: () {},
@@ -135,7 +135,7 @@ class petStore extends StatelessWidget {
                     ClipRRect(
                       borderRadius: BorderRadius.circular(5),
                       child: Image(
-                        image: AssetImage("images/dog-picture-2.jpg"),
+                        image: AssetImage('assets/images/dog-picture-2.jpg'),
                         height: 95,
                       ),
                     ),
@@ -261,7 +261,7 @@ class petStore extends StatelessWidget {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(33),
                     child: Image.asset(
-                      'assets/images/pedigree-dog-food.jpg',
+                      'assets/images/pedigree-dog-food.png',
                       width: 110,
                       height: 166,
                       fit: BoxFit.cover,
