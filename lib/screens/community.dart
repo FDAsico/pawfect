@@ -6,12 +6,6 @@ class CommunityPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          "PAWFECT NAGA"
-        ),
-      ),
-
       body: ListView(
         padding: EdgeInsets.symmetric(vertical: 10),
 
@@ -61,7 +55,7 @@ class CommunityPage extends StatelessWidget {
                     ClipRRect(
                       borderRadius: BorderRadius.circular(30),
                       child: Image(
-                        image: AssetImage("images/LeBron_James.jpg"),
+                        image: AssetImage("assets/images/LeBron_James.jpg"),
                         height: 50,
                       ),
                     ),
@@ -121,7 +115,7 @@ class CommunityPage extends StatelessWidget {
                 ClipRRect(
                   borderRadius: BorderRadius.circular(20),
                   child: Image(
-                    image: AssetImage("images/dog-picture-2.jpg"),
+                    image: AssetImage("assets/images/dog-picture-2.jpg"),
                     height: 255,
                   ),
                 ),
@@ -138,12 +132,12 @@ class CommunityPage extends StatelessWidget {
   }
 
   final List<Map<String, dynamic>> story = [
-    {'name': "Your Story", 'image': "images/LeBron_James.jpg"},
-    {'name': "Shh", 'image': "images/Mark_Zuckerberg.jpg"},
-    {'name': "Xtisla", 'image': "images/Elon_Musk.jpg"},
-    {'name': "Baron", 'image': "images/jeff-bezos.jpg"},
-    {'name': "Gart", 'image': "images/ed-sheeran.jpg"},
-    {'name': "Kurry", 'image': "images/jayson_tatum.jpg"},
+    {'name': "Your Story", 'image': "assets/images/LeBron_James.jpg"},
+    {'name': "Shh", 'image': "assets/images/Mark_Zuckerberg.jpg"},
+    {'name': "Xtisla", 'image': "assets/images/Elon_Musk.jpg"},
+    {'name': "Baron", 'image': "assets/images/jeff-bezos.jpg"},
+    {'name': "Gart", 'image': "assets/images/ed-sheeran.jpg"},
+    {'name': "Kurry", 'image': "assets/images/jayson_tatum.jpg"},
   ];
 
   Widget UserStory(String name, String ImageAsset, {bool isAddStory = false}){
