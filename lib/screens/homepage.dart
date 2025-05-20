@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:pawfect/screens/petgrooming.dart';
-import 'package:pawfect/screens/petboarding.dart';
 
 /* 
 Authored by: Albert Gian Ocfemia
@@ -77,38 +75,41 @@ class _HomePageState extends State<HomePage> {
               padding: EdgeInsets.only(top: 15.0),
               scrollDirection: Axis.horizontal,
               children: [
-                Column(
-                  children: [
-                    Container(
-                      margin: EdgeInsets.symmetric(horizontal: 10.0),
-                      padding: EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                          color: const Color(0xFFA0A2DA),
-                          borderRadius: BorderRadius.circular(40),
-                          border: Border.all(width: 1)),
-                      width: 110,
-                      height: 107,
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(25),
-                        child: Image(
-                            fit: BoxFit.cover,
-                            image: AssetImage('assets/images/store.png')),
-                      ),
-                    ),
-                    Container(
-                      alignment: Alignment.center,
-                      padding: EdgeInsets.only(top: 5),
-                      child: Text(
-                        "Pet Store",
-                        style: TextStyle(
-                          fontSize: 15,
+                GestureDetector(
+                  onTap: () => (Navigator.pushNamed(context, '/petstore')),
+                  child: Column(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.symmetric(horizontal: 10.0),
+                        padding: EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                            color: const Color(0xFFA0A2DA),
+                            borderRadius: BorderRadius.circular(40),
+                            border: Border.all(width: 1)),
+                        width: 110,
+                        height: 107,
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(25),
+                          child: Image(
+                              fit: BoxFit.cover,
+                              image: AssetImage('assets/images/store.png')),
                         ),
                       ),
-                    ),
-                  ],
+                      Container(
+                        alignment: Alignment.center,
+                        padding: EdgeInsets.only(top: 5),
+                        child: Text(
+                          "Pet Store",
+                          style: TextStyle(
+                            fontSize: 15,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
                 GestureDetector(
-                  onTap: () => (Navigator.push(context, MaterialPageRoute(builder: (context) => PetGroomingScreen()))),
+                  onTap: () => (Navigator.pushNamed(context, '/petgrooming')),
                   child: Column(
                     children: [
                       Container(
@@ -142,7 +143,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 GestureDetector(
-                  onTap: () => (Navigator.push(context, MaterialPageRoute(builder: (context) => PetBoarding()))),
+                  onTap: () => (Navigator.pushNamed(context, '/petboarding')),
                   child: Column(
                     children: [
                       Container(
