@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 
-class CommunityScreen extends StatelessWidget {
-  CommunityScreen({super.key});
+class CommunityPage extends StatelessWidget {
+  CommunityPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView(
-        padding: EdgeInsets.symmetric(vertical: 10),
+        // padding: EdgeInsets.symmetric(vertical: 10),
         children: [
-
           //------------------------------------User Story carousel
           Container(
             height: 100,
@@ -23,7 +22,7 @@ class CommunityScreen extends StatelessWidget {
                 final isAddStory = index == 0;
                 return Padding(
                   padding: EdgeInsets.only(left: 22),
-                  child: UserStory(name, image, isAddStory: isAddStory),
+                  child: userStory(name, image, isAddStory: isAddStory),
                 );
               },
             ),
@@ -34,8 +33,8 @@ class CommunityScreen extends StatelessWidget {
 
           //------------------------------------User post box
           Container(
-            margin: EdgeInsets.only(left: 35, right: 35),
-            padding: EdgeInsets.only(left: 10, right: 10, top: 20),
+            margin: EdgeInsets.symmetric(horizontal: 25),
+            padding: EdgeInsets.all(18),
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(20),
@@ -49,7 +48,7 @@ class CommunityScreen extends StatelessWidget {
               ],
             ),
             height: 400,
-            child: UserPost(context),
+            child: userPost(context),
           ),
           //------------------------------------User post box
         ],
@@ -71,108 +70,104 @@ class CommunityScreen extends StatelessWidget {
 
 
   //------------------------------------User Story style
-  Widget UserStory(String name, String ImageAsset, {bool isAddStory = false}) {
-    return Container(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Stack(
-            children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(30),
-                child: Image(image: AssetImage(ImageAsset), height: 50),
-              ),
-              if (isAddStory)
-                Positioned(
-                  bottom: 0,
-                  right: 0,
-                  child: Container(
-                    width: 18,
-                    height: 18,
-                    decoration: BoxDecoration(
-                      color: Colors.deepPurpleAccent,
-                      shape: BoxShape.circle,
-                      border: Border.all(color: Colors.white, width: 2),
-                    ),
-                    child: Icon(Icons.add, size: 12, color: Colors.white),
+  Widget userStory(String name, String imageAsset, {bool isAddStory = false}) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Stack(
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(30),
+              child: Image(image: AssetImage(imageAsset), height: 50),
+            ),
+            if (isAddStory)
+              Positioned(
+                bottom: 0,
+                right: 0,
+                child: Container(
+                  width: 18,
+                  height: 18,
+                  decoration: BoxDecoration(
+                    color: Colors.deepPurpleAccent,
+                    shape: BoxShape.circle,
+                    border: Border.all(color: Colors.white, width: 2),
                   ),
+                  child: Icon(Icons.add, size: 12, color: Colors.white),
                 ),
-            ],
-          ),
-          SizedBox(height: 4),
-          Text(name, style: TextStyle(fontSize: 10, color: Colors.black)),
-        ],
-      ),
+              ),
+          ],
+        ),
+        SizedBox(height: 4),
+        Text(name, style: TextStyle(fontSize: 10, color: Colors.black)),
+      ],
     );
   }
   //------------------------------------User Story style
 
 
   //------------------------------------User Posts Content
-  Widget UserPost(BuildContext context) {
+  Widget userPost(BuildContext context) {
     return Column(
       children: [
-        Padding(
-          padding: EdgeInsets.only(left: 10),
-          child: Row(
-            children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(30),
-                child: Image(
-                  image: AssetImage("assets/images/LeBron_James.jpg"),
-                  height: 50,
+        Row(
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(30),
+              child: Image(
+                image: AssetImage("assets/images/LeBron_James.jpg"),
+                height: 50,
+              ),
+            ),
+          
+            Spacer(),
+        
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "Abdul Jomar Sins",
+                  style: TextStyle(fontWeight: FontWeight.w600, fontSize: 15),
                 ),
-              ),
+                Text("December 6, 2025", style: TextStyle(fontSize: 10)),
+              ],
+            ),
+        
+            Spacer(),
+        
+            Text(
+              "2 mins ago",
+              style: TextStyle(fontSize: 10, fontWeight: FontWeight.w300),
+            ),
 
-              Divider(indent: 10),
+            Divider(),
 
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    "Abdul Jomar Sins",
-                    style: TextStyle(fontWeight: FontWeight.w600, fontSize: 15),
-                  ),
-                  Text("December 6, 2025", style: TextStyle(fontSize: 10)),
-                ],
-              ),
-
-              Divider(indent: 10),
-
-              Container(
-                margin: EdgeInsets.only(bottom: 15),
-                child: Text(
-                  "2 mins ago",
-                  style: TextStyle(fontSize: 10, fontWeight: FontWeight.w300),
-                ),
-              ),
-
-              IconButton(
-                icon: Icon(Icons.more_vert_sharp),
-                onPressed: () {
-                  showModalBottomSheet(
-                    context: context,
-                    builder: (BuildContext context) {
-                      return bottomMenuSheet();
-                    },
-                  );
-                },
-              ),
-            ],
-          ),
+            IconButton(
+              icon: Icon(Icons.more_vert_sharp),
+              onPressed: () {
+                showModalBottomSheet(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return bottomMenuSheet();
+                  },
+                );
+              },
+            ),
+          ],
         ),
         
-        SizedBox(height: 10),
+        Spacer(),
         
-        ClipRRect(
-          borderRadius: BorderRadius.circular(20),
-          child: Image(
-            image: AssetImage("assets/images/dog-picture-2.jpg"),
-            width: 274,
+        SizedBox(
+          height: 255,
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(20),
+            child: Image(
+              image: AssetImage("assets/images/dog-picture-2.png"),
+            ),
           ),
         ),
 
-        SizedBox(height: 10),
+        Spacer(),
 
         postActions(),
       ],
@@ -212,7 +207,7 @@ class CommunityScreen extends StatelessWidget {
   //------------------------------------Bottom Menu Sheet Items
   Widget menuItems(
     IconData icon,
-    String item_label, {
+    String itemLabel, {
     Color color = Colors.black,
   }) {
     return Container(
@@ -221,7 +216,7 @@ class CommunityScreen extends StatelessWidget {
         children: [
           Icon(icon, color: color),
           SizedBox(width: 10),
-          Text(item_label, style: TextStyle(fontSize: 15, color: color)),
+          Text(itemLabel, style: TextStyle(fontSize: 15, color: color)),
         ],
       ),
     );
