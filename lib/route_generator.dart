@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:pawfect/screens/adoptdetails.dart';
 import 'package:pawfect/screens/adoptpage.dart';
 import 'package:pawfect/screens/chatscreen.dart';
-import 'package:pawfect/screens/discoverpage.dart';
 import 'package:pawfect/screens/forgot.dart';
 import 'package:pawfect/screens/home.dart';
 import 'package:pawfect/screens/login.dart';
@@ -44,8 +43,6 @@ class RouteGenerator {
                 ));
       case '/home':
         return MaterialPageRoute(builder: (_) => Home());
-      case '/discover':
-        return MaterialPageRoute(builder: (_) => DiscoverPage());
       case '/adopt':
         return MaterialPageRoute(builder: (_) => PetAdoptPage());
       case '/adoptdetails':
