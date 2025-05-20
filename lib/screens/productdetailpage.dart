@@ -1,26 +1,6 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Product Detail',
-      theme: ThemeData(
-        fontFamily: 'Roboto',
-        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF5B488B)),
-        useMaterial3: true,
-      ),
-      home: const ProductDetailScreen(),
-    );
-  }
-}
+const Color primaryPurple = Color(0xFF5B488B);
 
 class ProductDetailScreen extends StatefulWidget {
   const ProductDetailScreen({super.key});
@@ -33,21 +13,12 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
   int quantity = 1;
   double userRating = 0.0;
 
-  final Color customColor = const Color(0xFF5B488B);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      extendBodyBehindAppBar: true,
-      appBar: AppBar(
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back_ios, color: customColor),
-          onPressed: () {},
-        ),
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-      ),
+      appBar: AppBar(),
       body: SingleChildScrollView(
+        padding: EdgeInsets.only(bottom: 30.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -55,7 +26,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
               'assets/images/bed.png',
               width: double.infinity,
               height: 400,
-              fit: BoxFit.cover,
+              // fit: BoxFit.cover,
             ),
             const SizedBox(height: 20),
             Padding(
@@ -67,8 +38,8 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                     child: Text(
                       'Pet Sleeping Bed Cat Bed Dog House Semi-closed Cat Accessories Foldable Detachable Cat Nest',
                       style: const TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20,
+                        fontWeight: FontWeight.w600,
+                        fontSize: 16,
                       ),
                       textAlign: TextAlign.center,
                     ),
@@ -91,14 +62,14 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                                     ? Icons.star
                                     : Icons.star_border,
                                 color: Colors.amber,
-                                size: 30,
+                                size: 15,
                               ),
                             );
                           }),
                           const SizedBox(width: 8),
                           Text(
                             '$userRating',
-                            style: const TextStyle(fontSize: 18),
+                            style: const TextStyle(fontSize: 15),
                           ),
                         ],
                       ),
@@ -113,11 +84,11 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                             child: Container(
                               padding: const EdgeInsets.all(6),
                               decoration: BoxDecoration(
-                                color: customColor,
+                                color: primaryPurple,
                                 borderRadius: BorderRadius.circular(6),
                               ),
                               child: const Icon(Icons.remove,
-                                  color: Colors.white, size: 18),
+                                  color: Colors.white, size: 16),
                             ),
                           ),
                           const SizedBox(width: 8),
@@ -134,11 +105,11 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                             child: Container(
                               padding: const EdgeInsets.all(6),
                               decoration: BoxDecoration(
-                                color: customColor,
+                                color: primaryPurple,
                                 borderRadius: BorderRadius.circular(6),
                               ),
                               child: const Icon(Icons.add,
-                                  color: Colors.white, size: 18),
+                                  color: Colors.white, size: 16),
                             ),
                           ),
                         ],
@@ -156,7 +127,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                           TextSpan(
                             text: '₱199 - ₱299  ',
                             style: TextStyle(
-                              color: customColor,
+                              color: primaryPurple,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
@@ -169,7 +140,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                           ),
                           TextSpan(
                             text: '-75%',
-                            style: TextStyle(color: customColor),
+                            style: TextStyle(color: primaryPurple),
                           )
                         ],
                       ),
@@ -179,16 +150,18 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                   const Text(
                     'Product Description',
                     style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 25,
+                      fontWeight: FontWeight.w600,
+                      fontSize: 16,
                     ),
                   ),
                   const SizedBox(height: 8),
-                  const Text(
-                    'This soft and cozy pet bed is perfect for both cats and small dogs. Foldable, detachable, and semi-enclosed for a sense of security.',
-                    style: TextStyle(fontSize: 18),
+                  Container(
+                    padding: EdgeInsets.only(bottom: 35.0),
+                    child: const Text(
+                      'This soft and cozy pet bed is perfect for both cats and small dogs. Foldable, detachable, and semi-enclosed for a sense of security.',
+                      style: TextStyle(fontSize: 14),
+                    ),
                   ),
-                  const SizedBox(height: 70),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 16),
                     child: Column(
@@ -200,17 +173,17 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                               child: ElevatedButton(
                                 onPressed: () {},
                                 style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.grey.shade200,
-                                  foregroundColor: customColor,
+                                  backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+                                  foregroundColor: primaryPurple,
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(12),
                                   ),
-                                  padding: const EdgeInsets.symmetric(
-                                      vertical: 12),
+                                  padding:
+                                      const EdgeInsets.symmetric(vertical: 12),
                                 ),
                                 child: const Icon(
                                   Icons.shopping_cart_outlined,
-                                  size: 26,
+                                  size: 24,
                                 ),
                               ),
                             ),
@@ -220,19 +193,19 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                               child: ElevatedButton(
                                 onPressed: () {},
                                 style: ElevatedButton.styleFrom(
-                                  backgroundColor: customColor,
+                                  backgroundColor: primaryPurple,
                                   foregroundColor: Colors.white,
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(12),
                                   ),
-                                  padding: const EdgeInsets.symmetric(
-                                      vertical: 12),
+                                  padding:
+                                      const EdgeInsets.symmetric(vertical: 12),
                                 ),
                                 child: const Text(
                                   'Buy Now',
                                   style: TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.bold,
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w600,
                                   ),
                                 ),
                               ),

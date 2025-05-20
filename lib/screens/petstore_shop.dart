@@ -1,28 +1,15 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(const MyApp());
+const Color primaryPurple = Color(0xFF5B488B);
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'Pet Store',
-      debugShowCheckedModeBanner: false,
-      home: CatShopPage(),
-    );
-  }
-}
-
-class CatShopPage extends StatefulWidget {
-  const CatShopPage({super.key});
+class PetShopPage extends StatefulWidget {
+  const PetShopPage({super.key});
 
   @override
-  State<CatShopPage> createState() => _CatShopPageState();
+  State<PetShopPage> createState() => _PetShopPageState();
 }
 
-class _CatShopPageState extends State<CatShopPage> {
+class _PetShopPageState extends State<PetShopPage> {
   final List<String> filters = ['All', 'Food', 'Toys', 'Hygiene'];
   String selectedFilter = 'All';
 
@@ -38,9 +25,18 @@ class _CatShopPageState extends State<CatShopPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: _buildAppBar(),
-      body: Padding(
-        padding: const EdgeInsets.all(16),
+      appBar: AppBar(
+        title: Text('Cat'),
+        centerTitle: true,
+        actions: [
+          IconButton(
+            icon: Icon(Icons.shopping_cart_outlined),
+            onPressed: () {},
+          ),
+        ],
+      ),
+      body: Container(
+        margin: EdgeInsets.symmetric(horizontal: 15),
         child: Column(
           children: [
             _buildSearchBar(),
@@ -54,61 +50,36 @@ class _CatShopPageState extends State<CatShopPage> {
     );
   }
 
-  // AppBar
-  AppBar _buildAppBar() {
-    return AppBar(
-      backgroundColor: Colors.white,
-      elevation: 0,
-      leading: IconButton(
-        icon: Icon(Icons.arrow_back, color: primaryColor),
-        onPressed: () {},
-      ),
-      title: Text('Cat', style: TextStyle(color: primaryColor)),
-      centerTitle: true,
-      actions: [
-        IconButton(
-          icon: Icon(Icons.shopping_cart_outlined, color: primaryColor),
-          onPressed: () {},
-        ),
-      ],
-    );
-  }
-
   // Search Bar
   Widget _buildSearchBar() {
     return Container(
-      height: 50,
+      height: 45,
       decoration: BoxDecoration(
-        color: Colors.grey[200],
-        border: Border.all(color: Colors.black, width: 1),
-        borderRadius: BorderRadius.circular(12),
+        color: const Color(0xFFD8D8D8),
+        borderRadius: BorderRadius.circular(8),
       ),
       child: Row(
         children: [
-          const Expanded(
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 12),
+          Expanded(
+            child: Container(
+              padding: EdgeInsets.symmetric(horizontal: 10),
               child: TextField(
                 decoration: InputDecoration(
-                  hintText: 'Search',
                   border: InputBorder.none,
+                  hintText: 'Search',
                 ),
               ),
             ),
           ),
           Container(
-            height: 50,
-            width: 50,
+            margin: const EdgeInsets.only(right: 1),
             decoration: BoxDecoration(
-              color: primaryColor,
-              borderRadius: const BorderRadius.only(
-                topRight: Radius.circular(12),
-                bottomRight: Radius.circular(12),
-              ),
+              color: primaryPurple,
+              borderRadius: BorderRadius.circular(8),
             ),
-            child: IconButton(
-              icon: const Icon(Icons.search, color: Colors.white),
-              onPressed: () {},
+            child: const Padding(
+              padding: EdgeInsets.all(10.0),
+              child: Icon(Icons.search, color: Colors.white),
             ),
           ),
         ],
@@ -146,7 +117,7 @@ class _CatShopPageState extends State<CatShopPage> {
               style: TextStyle(
                 color: isSelected ? Colors.white : Colors.black,
                 fontWeight: FontWeight.w600,
-                fontSize: 16,
+                fontSize: 12,
               ),
             ),
           ),
@@ -204,71 +175,75 @@ class _ProductCardState extends State<ProductCard> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: widget.primaryColor.withOpacity(0.3)),
-        boxShadow: const [
-          BoxShadow(
-            color: Colors.black12,
-            blurRadius: 6,
-            offset: Offset(0, 4),
-          ),
-        ],
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          // heart and for image
-          Stack(
-            children: [
-              ClipRRect(
-                borderRadius: const BorderRadius.vertical(top: Radius.circular(12)),
-                child: Image.asset(
-                  widget.imagePath,
-                  height: 170,
-                  width: double.infinity,
-                  fit: BoxFit.cover,
-                ),
-              ),
-              Positioned(
-                top: 8,
-                right: 8,
-                child: GestureDetector(
-                  onTap: () => setState(() => isFavorited = !isFavorited),
-                  child: Icon(
-                    isFavorited ? Icons.favorite : Icons.favorite_border,
-                    color: Colors.red,
+    return GestureDetector(
+      onTap: () => Navigator.pushNamed(context, '/productdetails'),
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(12),
+          // border: Border.all(color: widget.primaryColor.withOpacity(0.3)),
+          boxShadow: const [
+            BoxShadow(
+              color: Colors.black12,
+              blurRadius: 6,
+              offset: Offset(0, 4),
+            ),
+          ],
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // heart and for image
+            Stack(
+              children: [
+                ClipRRect(
+                  borderRadius:
+                      const BorderRadius.vertical(top: Radius.circular(12)),
+                  child: Image.asset(
+                    widget.imagePath,
+                    height: 170,
+                    width: double.infinity,
+                    fit: BoxFit.cover,
                   ),
                 ),
-              ),
-            ],
-          ),
-          // product name
-          Padding(
-            padding: const EdgeInsets.all(8),
-            child: Text(
-              widget.name,
-              style: const TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 18,
+                Positioned(
+                  top: 8,
+                  right: 8,
+                  child: GestureDetector(
+                    onTap: () => setState(() => isFavorited = !isFavorited),
+                    child: Icon(
+                      isFavorited ? Icons.favorite : Icons.favorite_border,
+                      color: Colors.red,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            // product name
+            Padding(
+              padding: const EdgeInsets.all(10),
+              child: Text(
+                widget.name,
+                style: const TextStyle(
+                  fontWeight: FontWeight.w600,
+                  fontSize: 18,
+                ),
               ),
             ),
-          ),
-          // product price
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8),
-            child: Text(
-              '₱${widget.price}',
-              style: TextStyle(
-                color: widget.primaryColor,
-                fontWeight: FontWeight.w600,
-                fontSize: 20,
+            // product price
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: Text(
+                '₱${widget.price}',
+                style: TextStyle(
+                  color: primaryPurple,
+                  fontWeight: FontWeight.w500,
+                  fontSize: 16,
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

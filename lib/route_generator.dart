@@ -12,6 +12,8 @@ import 'package:pawfect/screens/petboarding.dart';
 import 'package:pawfect/screens/petgrooming.dart';
 import 'package:pawfect/screens/petstore.dart';
 import 'package:pawfect/screens/petstore_categories.dart';
+import 'package:pawfect/screens/petstore_shop.dart';
+import 'package:pawfect/screens/productdetailpage.dart';
 import 'package:pawfect/screens/profilepage.dart';
 import 'package:pawfect/screens/reset.dart';
 import 'package:pawfect/screens/shoppage.dart';
@@ -64,6 +66,10 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => PetStorePage());
       case '/petcategorystore':
         return MaterialPageRoute(builder: (_) => PetstoreCategories());
+      case '/petshop':
+        return MaterialPageRoute(builder: (_) => PetShopPage());
+      case '/productdetails':
+        return MaterialPageRoute(builder: (_) => ProductDetailScreen());
       default:
         return _errorRoute();
     }
