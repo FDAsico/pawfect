@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pawfect/screens/adoptpage.dart';
+import 'package:pawfect/screens/community.dart';
 import 'package:pawfect/screens/bottomnavbar.dart';
-import 'package:pawfect/screens/discoverpage.dart';
 import 'package:pawfect/screens/homepage.dart';
 import 'package:pawfect/screens/profilepage.dart';
 import 'package:pawfect/screens/shoppage.dart';
@@ -25,7 +25,7 @@ class _HomeState extends State<Home> {
   int currentPageIndex = 0;
   final List<Widget> _pages = [
     const HomePage(),
-    const DiscoverPage(),
+    CommunityPage(),
     const PetAdoptPage(),
     const ShopPage(),
     const ProfilePage()

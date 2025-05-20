@@ -143,7 +143,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 GestureDetector(
-                  onTap: () => (Navigator.pushNamed(context, 'petboarding')),
+                  onTap: () => (Navigator.pushNamed(context, '/petboarding')),
                   child: Column(
                     children: [
                       Container(
