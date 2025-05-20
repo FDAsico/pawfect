@@ -125,14 +125,14 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                             const TextStyle(color: Colors.black, fontSize: 20),
                         children: [
                           TextSpan(
-                            text: '₱199 - ₱299  ',
+                            text: 'PHP 199 - 299  ',
                             style: TextStyle(
                               color: primaryPurple,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
                           const TextSpan(
-                            text: '₱699 - ₱1,299  ',
+                            text: 'PHP 699 - 1,299  ',
                             style: TextStyle(
                               decoration: TextDecoration.lineThrough,
                               color: Colors.grey,

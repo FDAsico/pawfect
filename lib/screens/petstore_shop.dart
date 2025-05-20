@@ -234,7 +234,7 @@ class _ProductCardState extends State<ProductCard> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Text(
-                '₱${widget.price}',
+                'PHP ${widget.price}',
                 style: TextStyle(
                   color: primaryPurple,
                   fontWeight: FontWeight.w500,
