@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:pawfect/screens/signup.dart';
 /* 
 Authored by: Francis Dave A. Asico
 Company: JaCode Facctory
@@ -146,7 +145,7 @@ class Login extends StatelessWidget {
                   height: 58.0,
                   child: SizedBox(
                     child: FilledButton(
-                      onPressed: () => Navigator.pushReplacementNamed(context, '/home'), 
+                      onPressed: () => Navigator.pushNamedAndRemoveUntil(context, '/home', (Route<dynamic> route) => false), 
                       style: ButtonStyle(
                         shape: WidgetStateProperty.all<RoundedRectangleBorder>(
                           RoundedRectangleBorder(
@@ -240,12 +239,7 @@ class Login extends StatelessWidget {
                       child: Text("Don't have an account? ")
                     ),
                     GestureDetector(
-                      onTap:() => Navigator.push(
-                        context, 
-                        MaterialPageRoute(
-                          builder: (context) => SignUp(initShow: 1),
-                        )
-                      ),
+                      onTap:() => Navigator.pushNamed(context, '/signup'),
                       child: SizedBox(
                         child: Text(
                           'Sign Up',

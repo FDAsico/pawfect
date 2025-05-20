@@ -19,8 +19,8 @@ class _PetAdoptPageState extends State<PetAdoptPage> {
   String selectedCategory = 'Cat';
 
   final adoptPets = const [
-    {'name': 'Ig', 'image': 'assets/images/cat3.jpeg', 'gender': 'Male'},
-    {'name': 'Lorna', 'image': 'assets/images/cat1.jpg', 'gender': 'Male'},
+    {'name': 'Ig', 'image': 'assets/images/cat1.jpg', 'gender': 'Male'},
+    {'name': 'Lorna', 'image': 'assets/images/cat3.jpeg', 'gender': 'Male'},
     {'name': 'Max', 'image': 'assets/images/cat5.jpg', 'gender': 'Male'},
     {'name': 'Bella', 'image': 'assets/images/cat2.jpg', 'gender': 'Female'},
     {'name': 'Charlie', 'image': 'assets/images/cat4.jpg', 'gender': 'Male'},

@@ -141,15 +141,13 @@ class PetStorePage extends StatelessWidget {
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
                 ),
                 Spacer(),
-                Container(
-                  child: InkWell(
-                    onTap: () =>
-                        Navigator.pushNamed(context, '/petcategorystore'),
-                    child: Text(
-                      "See all",
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
-                    ),
+                InkWell(
+                  onTap: () =>
+                      Navigator.pushNamed(context, '/petcategorystore'),
+                  child: Text(
+                    "See all",
+                    style:
+                        TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
                   ),
                 ),
               ],
@@ -189,14 +187,12 @@ class PetStorePage extends StatelessWidget {
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
                 ),
                 Spacer(),
-                Container(
-                  child: InkWell(
-                    onTap: () {},
-                    child: Text(
-                      "See all",
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
-                    ),
+                InkWell(
+                  onTap: () {},
+                  child: Text(
+                    "See all",
+                    style:
+                        TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
                   ),
                 ),
               ],

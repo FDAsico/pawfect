@@ -7,10 +7,11 @@ class CommunityPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView(
+        primary: false,
         // padding: EdgeInsets.symmetric(vertical: 10),
         children: [
           //------------------------------------User Story carousel
-          Container(
+          SizedBox(
             height: 100,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
@@ -29,7 +30,7 @@ class CommunityPage extends StatelessWidget {
           ),
           //------------------------------------User Story carousel
 
-          SizedBox(height: 35),
+          SizedBox(height: 20),
 
           //------------------------------------User post box
           Container(

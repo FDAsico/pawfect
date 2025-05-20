@@ -49,6 +49,14 @@ class _HomeState extends State<Home> {
                   fontWeight: FontWeight.normal,
                 ),
               )
+            : currentPageIndex == 1 ? Text(
+                'PAWFECT NAGA',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w900,
+                  color: Color(0xFF5B488B)
+                ),
+              )
             : null,
         actionsPadding: EdgeInsets.only(right: 15.0),
         actions: [
